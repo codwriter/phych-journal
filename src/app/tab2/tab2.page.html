@@ -12,11 +12,18 @@
       <ion-title size="large">Journal</ion-title>
     </ion-toolbar>
   </ion-header>
-  
+
   <!-- fab placed to the (vertical) center and end -->
-  <ion-fab vertical="center" horizontal="end" slot="fixed">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
+      <ion-icon name="pencil-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+  <div class="ion-padding">
+  
+    <ion-calendar [(ngModel)]="date" (onChange)="onChange($event)" [type]="type" [format]="'YYYY-MM-DD'">
+    </ion-calendar>
+  
+  </div>
 </ion-content>
