@@ -1,0 +1,7 @@
+{
+  "name": "phych-journal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
