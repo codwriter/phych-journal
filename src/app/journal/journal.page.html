@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Journal
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <div class="ion-padding">
+        <ion-calendar [(ngModel)]="date" (onChange)="onChange($event)" [type]="type" [format]="'YYYY-MM-DD'">
+        </ion-calendar>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-list>
+        <ion-item></ion-item>
+      </ion-list>
+    </ion-row>
+   
+  </ion-grid>
+  <!-- fab placed to the (vertical) center and end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="pencil-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

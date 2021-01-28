@@ -1,7 +1,8 @@
 {
   "name": "phych-journal",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
