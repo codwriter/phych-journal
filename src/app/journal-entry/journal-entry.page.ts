@@ -15,3 +15,4 @@ export class JournalEntryPage implements OnInit {
   }
 
 }
+//TODO: put an dismiss button and the the form 

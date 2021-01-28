@@ -9,8 +9,15 @@ import { JournalEntryPage} from '../journal-entry/journal-entry.page'
 export class JournalPage {
 date: string;
   type: 'string';
-  constructor() { }
+  constructor( private modalCtrl: ModalController ) { }
   
+   async presentJournEntryModal() {
+    const modal = await this.modalCtrl.create({
+      component: JournalEntryPage,
+    });
+    return await modal.present();
+  }
+
   onChange($event) {
     console.log($event);
   }
