@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { JournalPage } from './journal.page';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 // Calendar UI Module
 import { CalendarModule } from 'ion2-calendar';
 import { JournalPageRoutingModule } from './journal-routing.module';
@@ -14,7 +13,6 @@ import { JournalPageRoutingModule } from './journal-routing.module';
     IonicModule,
     CommonModule,
     FormsModule,
-    ExploreContainerComponentModule,
     JournalPageRoutingModule,
     CalendarModule
   ],
