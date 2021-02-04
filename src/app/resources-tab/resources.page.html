@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Resources
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-divider>
+      <ion-label>Podcasts</ion-label>
+    </ion-item-divider>
+    <ion-item-group *ngFor="let podcast of podcasts">
+      <ion-item  href="{{podcast.link}}">
+        <ion-label>{{podcast.name}}</ion-label>
+        <ion-thumbnail slot="start"><img src="{{BaseURL +podcast.img}}" /></ion-thumbnail>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-divider>
+      <ion-label>Books</ion-label>
+
+    </ion-item-divider>
+    <ion-item-group *ngFor="let book of books">
+      <ion-item lines="none" href="{{book.link}}">
+        <ion-label>{{book.name}}</ion-label>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-divider lines="none">
+      <ion-label>Movies</ion-label>
+    </ion-item-divider>
+    <ion-item-group *ngFor="let movie of movies">
+      <ion-item lines="none" href="{{movie.link}}">
+        <ion-label>{{movie.name}}</ion-label>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+
+  <div *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+
+</ion-content>
