@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title class="ion-text-center">
       Journal
     </ion-title>
   </ion-toolbar>
@@ -10,7 +10,7 @@
   <ion-grid>
     <ion-row>
       <div class="ion-padding">
-        <ion-calendar [(ngModel)]="date" (onChange)="onChange($event)" [type]="type" [format]="'YYYY-MM-DD'">
+        <ion-calendar [(ngModel)]="date" (onChange)="onChange($event)"[options]="optionsMulti" [type]="type" [format]="'YYYY-MM-DD'">
         </ion-calendar>
       </div>
     </ion-row>

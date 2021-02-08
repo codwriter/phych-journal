@@ -9,10 +9,12 @@ import { ModalController } from '@ionic/angular';
 })
 export class JournalEntryPage implements OnInit {
 
-  constructor() { }
+  constructor( private modalCtrl: ModalController,) { }
 
   ngOnInit() {
   }
+  dismiss() {
+    this.modalCtrl.dismiss();
+  }
 
 }
-//TODO: put an dismiss button and the the form 

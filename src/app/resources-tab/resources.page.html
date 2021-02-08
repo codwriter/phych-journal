@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title class="ion-text-center">
       Resources
     </ion-title>
   </ion-toolbar>
@@ -15,7 +15,8 @@
       <div *ngFor="let podcast of podcasts">
         <ion-item href="{{podcast.link}}">
           <ion-label>{{podcast.name}}</ion-label>
-          <ion-thumbnail slot="start"><img src="{{BaseURL +podcast.img}}" /></ion-thumbnail>
+          <!-- <ion-thumbnail slot="start"><img src="{{BaseURL +podcast.img}}" /></ion-thumbnail> -->
+          <ion-icon slot="start" name="mic-outline"></ion-icon>
         </ion-item>
       </div>
     </div>
@@ -24,8 +25,9 @@
         <ion-label>Books</ion-label>
       </ion-item-divider>
       <div *ngFor="let book of books">
-        <ion-item lines="none" href="{{book.link}}">
+        <ion-item  href="{{book.link}}">
           <ion-label>{{book.name}}</ion-label>
+            <ion-icon slot="start" name="book-outline"></ion-icon>
         </ion-item>
       </div>
     </div>
@@ -34,8 +36,9 @@
         <ion-label>Movies</ion-label>
       </ion-item-divider>
       <div *ngFor="let movie of movies">
-        <ion-item lines="none" href="{{movie.link}}">
+        <ion-item  href="{{movie.link}}">
           <ion-label>{{movie.name}}</ion-label>
+          <ion-icon slot="start" name="videocam-outline"></ion-icon>
         </ion-item>
       </div>
     </div>

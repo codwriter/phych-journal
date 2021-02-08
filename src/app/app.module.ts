@@ -13,12 +13,18 @@ import { baseURL } from './shared/baseurl';
 
 import { ResourcesService } from './services/resources.service';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+import { IonicStorageModule } from '@ionic/storage';
 
-
-@NgModule({
-  declarations: [AppComponent],
+@NgModule( {
+  declarations: [ AppComponent ],
   entryComponents: [],
-  imports: [ BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    HttpClientModule,
+    IonicStorageModule.forRoot(),
+  ],
   providers: [
     StatusBar,
     SplashScreen,
@@ -27,6 +33,6 @@ import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: 'BaseURL', useValue: baseURL }
   ],
-  bootstrap: [AppComponent]
-})
-export class AppModule {}
+  bootstrap: [ AppComponent ]
+} )
+export class AppModule { }

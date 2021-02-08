@@ -14,7 +14,7 @@ import { JournalPageRoutingModule } from './journal-routing.module';
     CommonModule,
     FormsModule,
     JournalPageRoutingModule,
-    CalendarModule
+    CalendarModule,
   ],
   
   declarations: [JournalPage]
