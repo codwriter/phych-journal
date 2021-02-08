@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { IonicModule } from '@ionic/angular';
 
@@ -8,13 +9,16 @@ import { StartPageRoutingModule } from './start-routing.module';
 
 import { StartPage } from './start.page';
 
-@NgModule({
+@NgModule( {
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
-    StartPageRoutingModule
+    StartPageRoutingModule,
+    
+
   ],
-  declarations: [StartPage]
-})
-export class StartPageModule {}
+  declarations: [ StartPage ]
+} )
+export class StartPageModule { }
