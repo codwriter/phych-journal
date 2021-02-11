@@ -4,6 +4,10 @@ import { User } from '../shared/user';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IonSlides, } from '@ionic/angular';
+import { ResourcesService } from '../services/resources.service';
+import questions from '../shared/questions.json';
+
+
 
 @Component( {
   selector: 'app-start',
@@ -14,14 +18,12 @@ export class StartPage implements OnInit {
   user: User = { username: '', firstTestScore: 0, didTheInitialTest: false, everyDayScore: [] };
   assesmentForm1: FormGroup;
   assesmentForm2: FormGroup;
+  errMess: String;
+  questions: any = questions;
 
- 
   constructor( private storage: Storage,
-    private router: Router,
-    private formBuilder: FormBuilder ) {
-    this.assesmentForm1 = this.formBuilder.group( {
-      username: [ '', Validators.required ],
-    } )
+    private router: Router) {
+    
   }
 
   ngOnInit() {
@@ -50,6 +52,9 @@ export class StartPage implements OnInit {
   nextSlide() {
     this.slides.slideNext();
   };
-  
+  selectAnswer( question, value ) {
+    console.log( question, value );
+    this.nextSlide();
+ }
 
 }

@@ -1,9 +1,5 @@
 ion-slides {
   height: 100%;
-  ion-slide {
-    background-color: var(--ion-color-primary);
-    color: white;
-  }
 }
 
 
@@ -30,7 +26,7 @@ p {
   padding: 0 40px;
   font-size: 14px;
   line-height: 1.5;
-  color: var(--ion-color-step-600, white);
+  color: var(--ion-color-step-600, grey);
 }
 
 p b {

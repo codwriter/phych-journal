@@ -1,5 +1,5 @@
 <ion-content fullscreen class="ion-padding" scroll-y="false">
-  <ion-slides pager="true" [options]="slideOpts" #slides scrollbar="true">
+  <ion-slides pager="true" [options]="slideOpts" #slides>
     <ion-slide>
       <div class="slide">
         <h2>Welcome</h2>
@@ -8,102 +8,99 @@
           proper code use.</p>
       </div>
 
-      <ion-button shape="round" (click)="nextSlide()">
+      <ion-button class="ion-align-self-center" shape="round" (click)="nextSlide()">
         <ion-icon name="arrow-forward-outline"></ion-icon>
       </ion-button>
     </ion-slide>
 
-    <ion-slide>
-      <div>
-        <h2>Let's start with a quich test to see if your are DP or DA</h2>
-      </div>
+    <ion-slide *ngFor="let question of questions.questions; let i = index;">
 
-      <form [formGroup]="assesmentForm1" (ngSubmit)="onSumbit()" class="ion-padding">
-        <ion-item>
-          <ion-label>Whats your name:</ion-label>
-          <ion-input type="text" formControlName="username"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Loerem Ipsum palslsda</ion-label>
+      <ion-list lines="none">
+        <ion-grid>
+          <ion-row>
+            <ion-col class="ion-align-self-center">
+              <h3>Question {{i+1}}</h3>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="ion-align-self-center">
+              <h3>{{question.questionText}}</h3>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-radio-group value="answer" (click)="selectAnswer(question)">
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>1</ion-label>
+                    <ion-radio slot="start" value="1"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>2</ion-label>
+                    <ion-radio slot="start" value="2"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>3</ion-label>
+                    <ion-radio slot="start" value="3"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>4</ion-label>
+                    <ion-radio slot="start" value="4"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>5</ion-label>
+                    <ion-radio slot="start" value="5"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>6</ion-label>
+                    <ion-radio slot="start" value="6"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>7</ion-label>
+                    <ion-radio slot="start" value="7"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>8</ion-label>
+                    <ion-radio slot="start" value="8"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>9</ion-label>
+                    <ion-radio slot="start" value="9"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>10</ion-label>
+                    <ion-radio slot="start" value="10"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-radio-group>
+          </ion-row>
+
           <ion-range min="1" max="10" pin="true" snaps="true" color="secondary" value="5">
             <ion-icon slot="start" size="small" name="accessibility-outline"></ion-icon>
             <ion-icon slot="end" name="accessibility-outline"></ion-icon>
           </ion-range>
-        </ion-item>
-        <ion-item>
-          <ion-label>Loerem Ipsum palslsda</ion-label>
-          <ion-range min="1" max="10" pin="true" snaps="true" color="secondary" value="5">
-            <ion-icon slot="start" size="small" name="accessibility-outline"></ion-icon>
-            <ion-icon slot="end" name="accessibility-outline"></ion-icon>
-          </ion-range>
-        </ion-item>
+        </ion-grid>
+      </ion-list>
 
-        <ion-item>
-          <ion-label>Loerem Ipsum palslsda</ion-label>
-          <ion-range min="1" max="10" pin="true" snaps="true" color="secondary" value="5">
-            <ion-icon slot="start" size="small" name="accessibility-outline"></ion-icon>
-            <ion-icon slot="end" name="accessibility-outline"></ion-icon>
-          </ion-range>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Loerem Ipsum palslsda</ion-label>
-          <ion-range min="1" max="10" pin="true" snaps="true" color="secondary" value="5">
-            <ion-icon slot="start" size="small" name="accessibility-outline"></ion-icon>
-            <ion-icon slot="end" name="accessibility-outline"></ion-icon>
-          </ion-range>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Loerem Ipsum palslsda</ion-label>
-          <ion-range min="1" max="10" pin="true" snaps="true" color="secondary" value="5">
-            <ion-icon slot="start" size="small" name="accessibility-outline"></ion-icon>
-            <ion-icon slot="end" name="accessibility-outline"></ion-icon>
-          </ion-range>
-        </ion-item>
-   
-
-    
-      <ion-item>
-        <ion-label>Loerem Ipsum palslsda</ion-label>
-        <ion-range min="1" max="10" pin="true" snaps="true" color="secondary" value="5">
-          <ion-icon slot="start" size="small" name="accessibility-outline"></ion-icon>
-          <ion-icon slot="end" name="accessibility-outline"></ion-icon>
-        </ion-range>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Loerem Ipsum palslsda</ion-label>
-        <ion-range min="1" max="10" pin="true" snaps="true" color="secondary" value="5">
-          <ion-icon slot="start" size="small" name="accessibility-outline"></ion-icon>
-          <ion-icon slot="end" name="accessibility-outline"></ion-icon>
-        </ion-range>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Loerem Ipsum palslsda</ion-label>
-        <ion-range min="1" max="10" pin="true" snaps="true" color="secondary" value="5">
-          <ion-icon slot="start" size="small" name="accessibility-outline"></ion-icon>
-          <ion-icon slot="end" name="accessibility-outline"></ion-icon>
-        </ion-range>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Loerem Ipsum palslsda</ion-label>
-        <ion-range min="1" max="10" pin="true" snaps="true" color="secondary" value="5">
-          <ion-icon slot="start" size="small" name="accessibility-outline"></ion-icon>
-          <ion-icon slot="end" name="accessibility-outline"></ion-icon>
-        </ion-range>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Loerem Ipsum palslsda</ion-label>
-        <ion-range min="1" max="10" pin="true" snaps="true" color="secondary" value="5">
-          <ion-icon slot="start" size="small" name="accessibility-outline"></ion-icon>
-          <ion-icon slot="end" name="accessibility-outline"></ion-icon>
-        </ion-range>
-      </ion-item>
-      </form>
     </ion-slide>
 
   </ion-slides>

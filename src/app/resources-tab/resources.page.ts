@@ -30,5 +30,6 @@ export class ResourcesPage {
     this.resoursesservice.getMovies()
       .subscribe( movies => this.movies = movies,
         errmess => this.errMess = <any>errmess );
+    
   }
 }

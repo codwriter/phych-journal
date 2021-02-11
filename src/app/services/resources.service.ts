@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Podcast } from '../shared/podcast';
 import { Movie } from '../shared/movie';
 import { Book } from '../shared/book';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { baseURL } from '../shared/baseurl';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { ProcessHTTPMsgService } from './process-httpmsg.service';
+
 
 @Injectable( {
   providedIn: 'root'
