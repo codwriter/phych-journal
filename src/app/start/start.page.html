@@ -1,17 +1,27 @@
 <ion-content fullscreen class="ion-padding" scroll-y="false">
   <ion-slides pager="true" [options]="slideOpts" #slides>
     <ion-slide>
+      <ion-grid>
       <div class="slide">
         <h2>Welcome</h2>
         <p>The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a demonstration
           of
           proper code use.</p>
       </div>
-
+      <ion-row>
+        <ion-col class="ion-align-self-center">
+        <ion-item  lines="none" >
+          <ion-label>What is you name?</ion-label>
+          <ion-input name="username" type="text" [(ngModel)]="username"></ion-input>
+        </ion-item>
+        </ion-col>
+      </ion-row>
       <ion-button class="ion-align-self-center" shape="round" (click)="nextSlide()">
         <ion-icon name="arrow-forward-outline"></ion-icon>
       </ion-button>
+      </ion-grid>
     </ion-slide>
+
 
     <ion-slide *ngFor="let question of questions.questions; let i = index;">
 
@@ -28,8 +38,14 @@
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-radio-group value="answer" (click)="selectAnswer(question)">
-              <ion-row>
+            <ion-radio-group [(ngModel)]="answer">
+              <ion-row size="12" size-sm>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>0</ion-label>
+                    <ion-radio slot="start" value="0"></ion-radio>
+                  </ion-item>
+                </ion-col>
                 <ion-col>
                   <ion-item>
                     <ion-label>1</ion-label>
@@ -60,48 +76,26 @@
                     <ion-radio slot="start" value="5"></ion-radio>
                   </ion-item>
                 </ion-col>
-                <ion-col>
-                  <ion-item>
-                    <ion-label>6</ion-label>
-                    <ion-radio slot="start" value="6"></ion-radio>
-                  </ion-item>
-                </ion-col>
-                <ion-col>
-                  <ion-item>
-                    <ion-label>7</ion-label>
-                    <ion-radio slot="start" value="7"></ion-radio>
-                  </ion-item>
-                </ion-col>
-                <ion-col>
-                  <ion-item>
-                    <ion-label>8</ion-label>
-                    <ion-radio slot="start" value="8"></ion-radio>
-                  </ion-item>
-                </ion-col>
-                <ion-col>
-                  <ion-item>
-                    <ion-label>9</ion-label>
-                    <ion-radio slot="start" value="9"></ion-radio>
-                  </ion-item>
-                </ion-col>
-                <ion-col>
-                  <ion-item>
-                    <ion-label>10</ion-label>
-                    <ion-radio slot="start" value="10"></ion-radio>
-                  </ion-item>
-                </ion-col>
               </ion-row>
             </ion-radio-group>
           </ion-row>
 
-          <ion-range min="1" max="10" pin="true" snaps="true" color="secondary" value="5">
+          <ion-range min="0" max="10" pin="true" snaps="true" color="secondary" value="0">
             <ion-icon slot="start" size="small" name="accessibility-outline"></ion-icon>
             <ion-icon slot="end" name="accessibility-outline"></ion-icon>
           </ion-range>
+          <ion-button class="ion-align-self-center" shape="round" (click)="selectAnswer(question,answer)">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </ion-button>
         </ion-grid>
       </ion-list>
 
     </ion-slide>
-
+    <ion-slide>
+      <ion-label>Your Result is: {{result}}</ion-label>
+      <ion-button class="ion-align-self-center" shape="round" (click)="finish()">
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-slide>
   </ion-slides>
 </ion-content>
