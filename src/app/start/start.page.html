@@ -1,101 +1,28 @@
-<ion-content fullscreen class="ion-padding" scroll-y="false">
+<ion-content fullscreen class="ion-padding">
   <ion-slides pager="true" [options]="slideOpts" #slides>
     <ion-slide>
       <ion-grid>
-      <div class="slide">
-        <h2>Welcome</h2>
-        <p>The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a demonstration
-          of
-          proper code use.</p>
-      </div>
-      <ion-row>
-        <ion-col class="ion-align-self-center">
-        <ion-item  lines="none" >
-          <ion-label>What is you name?</ion-label>
-          <ion-input name="username" type="text" [(ngModel)]="username"></ion-input>
-        </ion-item>
-        </ion-col>
-      </ion-row>
-      <ion-button class="ion-align-self-center" shape="round" (click)="nextSlide()">
-        <ion-icon name="arrow-forward-outline"></ion-icon>
-      </ion-button>
+        <div class="slide">
+          <h2>Welcome</h2>
+          <p>The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a
+            demonstration
+            of
+            proper code use.</p>
+        </div>
+        <ion-row>
+          <ion-col class="ion-align-self-center">
+            <ion-item lines="none">
+              <ion-label position="floating">What is you name?</ion-label>
+              <ion-input required="true" minlength="3" name="username" type="text" [(ngModel)]="username"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-button  class="ion-align-self-center" shape="round" (click)="nextSlide()">
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-button>
       </ion-grid>
     </ion-slide>
 
 
-    <ion-slide *ngFor="let question of questions.questions; let i = index;">
-
-      <ion-list lines="none">
-        <ion-grid>
-          <ion-row>
-            <ion-col class="ion-align-self-center">
-              <h3>Question {{i+1}}</h3>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col class="ion-align-self-center">
-              <h3>{{question.questionText}}</h3>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-radio-group [(ngModel)]="answer">
-              <ion-row size="12" size-sm>
-                <ion-col>
-                  <ion-item>
-                    <ion-label>0</ion-label>
-                    <ion-radio slot="start" value="0"></ion-radio>
-                  </ion-item>
-                </ion-col>
-                <ion-col>
-                  <ion-item>
-                    <ion-label>1</ion-label>
-                    <ion-radio slot="start" value="1"></ion-radio>
-                  </ion-item>
-                </ion-col>
-                <ion-col>
-                  <ion-item>
-                    <ion-label>2</ion-label>
-                    <ion-radio slot="start" value="2"></ion-radio>
-                  </ion-item>
-                </ion-col>
-                <ion-col>
-                  <ion-item>
-                    <ion-label>3</ion-label>
-                    <ion-radio slot="start" value="3"></ion-radio>
-                  </ion-item>
-                </ion-col>
-                <ion-col>
-                  <ion-item>
-                    <ion-label>4</ion-label>
-                    <ion-radio slot="start" value="4"></ion-radio>
-                  </ion-item>
-                </ion-col>
-                <ion-col>
-                  <ion-item>
-                    <ion-label>5</ion-label>
-                    <ion-radio slot="start" value="5"></ion-radio>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-radio-group>
-          </ion-row>
-
-          <ion-range min="0" max="10" pin="true" snaps="true" color="secondary" value="0">
-            <ion-icon slot="start" size="small" name="accessibility-outline"></ion-icon>
-            <ion-icon slot="end" name="accessibility-outline"></ion-icon>
-          </ion-range>
-          <ion-button class="ion-align-self-center" shape="round" (click)="selectAnswer(question,answer)">
-            <ion-icon name="arrow-forward-outline"></ion-icon>
-          </ion-button>
-        </ion-grid>
-      </ion-list>
-
-    </ion-slide>
-    <ion-slide>
-      <ion-label>Your Result is: {{result}}</ion-label>
-      <ion-button class="ion-align-self-center" shape="round" (click)="finish()">
-        <ion-icon name="arrow-forward-outline"></ion-icon>
-      </ion-button>
-    </ion-slide>
   </ion-slides>
 </ion-content>
