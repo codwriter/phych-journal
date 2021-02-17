@@ -34,4 +34,10 @@ export class IntroPage implements OnInit {
     this.storage.set( 'user', this.user );
   };
   
+  endIntro() {
+    this.router.navigateByUrl( "tabs/home" );
+  }
+  doQuestionnaire() {
+    this.router.navigateByUrl( '/questionnaire' );
+  }
 }
