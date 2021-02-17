@@ -1,0 +1,37 @@
+{
+    "podcasts": [
+        {
+            "id": "0",
+            "name": "The anxious truth - EP 0017",
+            "img": "images/podcast.png",
+            "link": "https://open.spotify.com/episode/16Dhi3wmoW5COhT2QFA4YS?si=obTDxr1_Q-6SYXuphOXqHQ"
+        },
+        {
+            "id": "1",
+            "name": "The anxious truth - EP 0018",
+            "img": "images/podcast.png",
+            "link": "https://open.spotify.com/episode/2TmhEhkvMZRDgE0cmK6ieW?si=hbXlBRfXStyUF9Lj2gt_Fg"
+        },
+        {
+            "id": "2",
+            "name": "Depersonalization and Anxiety - A symptom or something else?",
+            "img": "images/podcast.png",
+            "link": "https://open.spotify.com/episode/7yZoWMIvM98PjqeqAvfrsg?si=0MHDdkYiR2OFEG4Er0nmXQ"
+        }
+    ],
+    "movies": [
+        {
+            "id": "0",
+            "name": "The Numb",
+            "link": " https://www.imdb.com/title/tt0795439/"
+        }
+    ],
+    "books": [
+        {
+            "id":"0",
+            "name":"Feeling Unreal: Depersonalization Disorder and the Loss of the Self ",
+            "writer": "Jeffrey Abugel",
+            "link": "https://www.amazon.com/Feeling-Unreal-Depersonalization-Disorder-Loss/dp/0195385217/ref=sr_1_1?dchild=1&keywords=feeling+unreal&qid=1611685823&sr=8-1"
+        }
+    ]
+}
