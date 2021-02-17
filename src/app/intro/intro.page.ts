@@ -5,12 +5,12 @@ import { Router } from '@angular/router';
 import { IonSlides, } from '@ionic/angular';
 
 @Component( {
-  selector: 'app-start',
-  templateUrl: './start.page.html',
-  styleUrls: [ './start.page.scss' ],
+  selector: 'app-intro',
+  templateUrl: './intro.page.html',
+  styleUrls: [ './intro.page.scss' ],
 } )
 
-export class StartPage implements OnInit {
+export class IntroPage implements OnInit {
   user: User = { username: '', firstTestScore: 0, didTheInitialTest: false, everyDayScore: [] };
 
   username: string;
@@ -30,5 +30,8 @@ export class StartPage implements OnInit {
 
   nextSlide() {
     this.slides.slideNext();
+    this.user.username = this.username;
+    this.storage.set( 'user', this.user );
   };
+  
 }

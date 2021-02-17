@@ -10,12 +10,12 @@ const routes: Routes = [
   },
   {
     path: 'intro',
-    loadChildren: () => import( './start/start.module' ).then( m => m.StartPageModule ),
+    loadChildren: () => import( './intro/intro.module' ).then( m => m.IntroPageModule ),
   
   },
   {
-    path: 'questionaire',
-    loadChildren: () => import('./questionaire/questionaire.module').then( m => m.QuestionairePageModule)
+    path: 'questionnaire',
+    loadChildren: () => import('./questionnaire/questionnaire.module').then( m => m.QuestionnairePageModule)
   }
 ];
 @NgModule({

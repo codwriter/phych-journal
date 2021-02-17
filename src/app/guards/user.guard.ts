@@ -14,14 +14,12 @@ export class UserGuard implements CanActivate {
     state: RouterStateSnapshot ): Promise<boolean> {
     let user: User;
     user = await this.storage.get( 'user' );
+    var firstTimeRun = false;
     if ( !user ) {
-      this.storage.set( 'user', user );
       this.router.navigateByUrl( '/intro' );
     }
-    else if(user.didTheInitialTest==false){
-      this.router.navigateByUrl( '/intro' );
-    }   
-    return user.didTheInitialTest;
+    else firstTimeRun = true;
+    return firstTimeRun;
   }
 
 }

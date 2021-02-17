@@ -5,12 +5,13 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IonSlides, } from '@ionic/angular';
 import questions from '../shared/questions.json';
+
 @Component({
-  selector: 'app-questionaire',
-  templateUrl: './questionaire.page.html',
-  styleUrls: ['./questionaire.page.scss'],
+  selector: 'app-questionnaire',
+  templateUrl: './questionnaire.page.html',
+  styleUrls: ['./questionnaire.page.scss'],
 })
-export class QuestionairePage implements OnInit {
+export class QuestionnairePage implements OnInit {
 
   user: User = { username: '', firstTestScore: 0, didTheInitialTest: false, everyDayScore: [] };
   assesmentForm: FormGroup;
@@ -30,8 +31,10 @@ export class QuestionairePage implements OnInit {
       intencity_answer: [ '', Validators.required ]
     } );
   }
+
   ngOnInit() {
   }
+
   slideOpts = {
     initialSlide: 0,
     speed: 400,
@@ -47,8 +50,6 @@ export class QuestionairePage implements OnInit {
   onSubmit() {
     console.log( this.assesmentForm.value );
     this.result_frequency += parseInt( this.assesmentForm.value.frequency_answer );
-    this.frequency_answer = 0;
-    this.intencity_answer = 0;
     this.nextSlide();
   }
   restart() {
@@ -65,6 +66,6 @@ export class QuestionairePage implements OnInit {
     }
     this.storage.set( 'user', this.user );
     console.log( this.user );
-    this.router.navigateByUrl( '/tabs/tab1' );
+    this.router.navigateByUrl( '/tabs/home' );
   }
 }

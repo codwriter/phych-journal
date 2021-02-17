@@ -2,23 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 import { IonicModule } from '@ionic/angular';
 
-import { StartPageRoutingModule } from './start-routing.module';
+import { QuestionnairePageRoutingModule } from './questionnaire-routing.module';
 
-import { StartPage } from './start.page';
+import { QuestionnairePage } from './questionnaire.page';
 
-@NgModule( {
+@NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    StartPageRoutingModule,
-    
-
+    QuestionnairePageRoutingModule
   ],
-  declarations: [ StartPage ]
-} )
-export class StartPageModule { }
+  declarations: [QuestionnairePage]
+})
+export class QuestionnairePageModule {}
