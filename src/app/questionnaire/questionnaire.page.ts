@@ -6,11 +6,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IonSlides, } from '@ionic/angular';
 import questions from '../shared/questions.json';
 
-@Component({
+@Component( {
   selector: 'app-questionnaire',
   templateUrl: './questionnaire.page.html',
-  styleUrls: ['./questionnaire.page.scss'],
-})
+  styleUrls: [ './questionnaire.page.scss' ],
+} )
 export class QuestionnairePage implements OnInit {
 
   user: User = { username: '', firstTestScore: 0, didTheInitialTest: false, everyDayScore: [] };
@@ -19,8 +19,7 @@ export class QuestionnairePage implements OnInit {
   questions: any = questions;
   frequency_answer: number;
   intencity_answer: number;
-  result_frequency: number = 0;
-  result_intencity: number = 0;
+  result: number = 0;
   username: string;
 
   constructor( private storage: Storage,
@@ -48,24 +47,27 @@ export class QuestionnairePage implements OnInit {
   };
 
   onSubmit() {
-    console.log( this.assesmentForm.value );
-    this.result_frequency += parseInt( this.assesmentForm.value.frequency_answer );
+    
+    this.result += parseInt( this.assesmentForm.value.frequency_answer );
+    this.result += parseInt( this.assesmentForm.value.intencity_answer );
+    console.log( this.assesmentForm.value, this.result, this.assesmentForm.value.frequency_answer, this.assesmentForm.value.intencity_answer );
+    this.assesmentForm.reset();
     this.nextSlide();
   }
   restart() {
-    this.result_frequency = 0;
-    this.result_intencity = 0;
+    this.result = 0;
     this.slides.slideTo( 1 );
   }
-
+  exitQuestionnaire() {
+    this.router.navigateByUrl( 'tabs/home' );
+  }
   finish() {
-    this.user.firstTestScore = this.result_frequency;
+    this.user.firstTestScore = this.result;
     this.user.username = this.username;
-    if ( this.result_frequency ) {
+    if ( this.result ) {
       this.user.didTheInitialTest = true;
     }
     this.storage.set( 'user', this.user );
-    console.log( this.user );
     this.router.navigateByUrl( '/tabs/home' );
   }
 }

@@ -7,18 +7,31 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+<ion-grid>
+  <ion-row>
+    <ion-col >
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Quote of the Day</ion-card-title>
+      <ion-card-title>{{quotes[1].quoteText}}</ion-card-title>
+      <ion-card-subtitle>{{quotes[1].quoteAuthor}}</ion-card-subtitle>
     </ion-card-header>
-  
-    <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
-    </ion-card-content>
-
   </ion-card>
-
-
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col>
+    <ion-button expand="block" (click)="questionnaire()">Lets do the questionnaire</ion-button>
+  </ion-col>
+</ion-row>
+<ion-row *ngIf="user.username">
+  <ion-col>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title >Hello {{user.username}}</ion-card-title>
+        <ion-card-subtitle *ngIf="user.firstTestScore">{{user.firstTestScore}}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </ion-col>
+</ion-row>
+</ion-grid>
 </ion-content>

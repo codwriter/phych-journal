@@ -1,10 +1,10 @@
 ion-slides {
   height: 100%;
-  ion-slide{
-     align-items: flex-start;
+  overflow-y: scroll;
+  ion-slide {
+    align-items: flex-start;
   }
 }
-
 
 .swiper-slide {
   display: block;
