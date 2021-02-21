@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { Storage } from '@ionic/storage';
+import { Component, ViewChild } from '@angular/core';
 import { User } from '../shared/user';
 import { Router } from '@angular/router';
 import quotes from '../shared/quotes.json';
+import { UserService } from '../services/user.service';
 
 @Component( {
   selector: 'app-home',
@@ -11,20 +11,15 @@ import quotes from '../shared/quotes.json';
 } )
 export class HomePage {
   quotes: any = quotes;
-  user: User = { username: "", didTheInitialTest: false, everyDayScore: [], firstTestScore: 0 };
-
-  constructor( private storage: Storage,
-    private router: Router,
-  ) {
-    this.storage.get( 'user' ).then( user => {
-      if ( user ) {
-        this.user = user;
-      }
-    } );
-  }
+  user: User={username:'',didTheInitialTest:false,everyDayScore:[],firstTestScore:0};
+  welcomeMessage: string;
+  constructor( private router: Router,
+    private userSrvc:UserService,
+  ) { }
 
   ngOnInit() {
-
+    this.welcomeMessage = this.welcomeText();
+    this.userSrvc.getUserInfo().then( user => this.user = user );
   }
   ionViewWillEnter() {
     this.shuffleArray( quotes );
@@ -37,13 +32,21 @@ export class HomePage {
     }
   }
 
-  // async presentQuestionnaireModal() {
-  //   const modal = await this.modalCtrl.create( {
-  //     component: QuestionnairePage
-  //   } );
-  //   return await modal.present();
-  // }
+
   questionnaire() {
     this.router.navigateByUrl( 'questionnaire' );
   }
+
+  welcomeText() {
+    let myDate = new Date();
+    let hrs = myDate.getHours();
+    let greet;
+    if ( hrs < 12 )
+      return greet = "Good Morning";
+    else if ( hrs >= 12 && hrs <= 17 )
+      return greet = 'Good Afternoon';
+    else if ( hrs >= 17 && hrs <= 24 )
+      return greet = 'Good Evening';
+  }
+
 }

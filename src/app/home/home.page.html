@@ -1,4 +1,4 @@
-<ion-header  [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title class="ion-text-center">
       Home
@@ -6,32 +6,37 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-<ion-grid>
-  <ion-row>
-    <ion-col >
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>{{quotes[1].quoteText}}</ion-card-title>
-      <ion-card-subtitle>{{quotes[1].quoteAuthor}}</ion-card-subtitle>
-    </ion-card-header>
-  </ion-card>
-  </ion-col>
-</ion-row>
-<ion-row>
-  <ion-col>
-    <ion-button expand="block" (click)="questionnaire()">Lets do the questionnaire</ion-button>
-  </ion-col>
-</ion-row>
-<ion-row *ngIf="user.username">
-  <ion-col>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title >Hello {{user.username}}</ion-card-title>
-        <ion-card-subtitle *ngIf="user.firstTestScore">{{user.firstTestScore}}</ion-card-subtitle>
-      </ion-card-header>
-    </ion-card>
-  </ion-col>
-</ion-row>
-</ion-grid>
+<ion-content  class="ion-padding">
+  <ion-grid>
+    <ion-row >
+      <ion-col  *ngIf="user.username">
+        <ion-item lines="none"> 
+        <ion-label>{{welcomeMessage}} {{user.username}}</ion-label>
+      </ion-item>
+      </ion-col>
+      <ion-col *ngIf="user.firstTestScore">
+        <ion-item lines="none">
+        <ion-label>Score:</ion-label>
+        <ion-badge slot="end">{{user.firstTestScore}}</ion-badge>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Quote Of the day</ion-card-title>
+            <ion-card-subtitle>{{quotes[1].quoteAuthor}}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>{{quotes[1].quoteText}}</ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" (click)="questionnaire()">Lets do the questionnaire</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 </ion-content>

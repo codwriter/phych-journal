@@ -1,7 +1,11 @@
 <ion-header>
-  <ion-button fill="clear" (click)="exitQuestionnaire()">
-    <ion-icon name="arrow-back-outline"></ion-icon>
-  </ion-button>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="exitQuestionnaire()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen class="ion-padding">
@@ -47,7 +51,8 @@
             </ion-row>
             <ion-row>
               <ion-col class="ion-align-self-center">
-                <ion-range min="0" max="5" snaps="true" pin="true" ticks="true" value="0" formControlName="intencity_answer">
+                <ion-range min="0" max="5" snaps="true" pin="true" ticks="true" value="0"
+                  formControlName="intencity_answer">
                   <ion-label slot="start">0</ion-label>
                   <ion-label slot="end">5</ion-label>
                 </ion-range>

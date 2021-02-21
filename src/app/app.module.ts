@@ -14,6 +14,7 @@ import { baseURL } from './shared/baseurl';
 import { ResourcesService } from './services/resources.service';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 import { IonicStorageModule } from '@ionic/storage';
+import { UserService } from './services/user.service';
 
 @NgModule( {
   declarations: [ AppComponent ],
@@ -30,6 +31,7 @@ import { IonicStorageModule } from '@ionic/storage';
     SplashScreen,
     ProcessHTTPMsgService,
     ResourcesService,
+    UserService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: 'BaseURL', useValue: baseURL }
   ],

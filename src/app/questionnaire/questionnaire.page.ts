@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IonSlides, } from '@ionic/angular';
 import questions from '../shared/questions.json';
+import { UserService } from '../services/user.service';
 
 @Component( {
   selector: 'app-questionnaire',
@@ -13,22 +14,23 @@ import questions from '../shared/questions.json';
 } )
 export class QuestionnairePage implements OnInit {
 
-  user: User = { username: '', firstTestScore: 0, didTheInitialTest: false, everyDayScore: [] };
+  user: User;
   assesmentForm: FormGroup;
   errMess: String;
   questions: any = questions;
-  frequency_answer: number;
-  intencity_answer: number;
+  frequency_answer: number = 0;
+  intencity_answer: number = 0;
   result: number = 0;
-  username: string;
 
   constructor( private storage: Storage,
+    private usrSrv: UserService,
     private router: Router,
     private formBuilder: FormBuilder ) {
     this.assesmentForm = this.formBuilder.group( {
-      frequency_answer: [ '', Validators.required ],
-      intencity_answer: [ '', Validators.required ]
+      frequency_answer: [ 0, Validators.required ],
+      intencity_answer: [ 0, Validators.required ]
     } );
+    this.usrSrv.getUserInfo().then( user => this.user = user );
   }
 
   ngOnInit() {
@@ -47,23 +49,24 @@ export class QuestionnairePage implements OnInit {
   };
 
   onSubmit() {
-    
-    this.result += parseInt( this.assesmentForm.value.frequency_answer );
-    this.result += parseInt( this.assesmentForm.value.intencity_answer );
-    console.log( this.assesmentForm.value, this.result, this.assesmentForm.value.frequency_answer, this.assesmentForm.value.intencity_answer );
-    this.assesmentForm.reset();
+    this.result += this.assesmentForm.value.frequency_answer + this.assesmentForm.value.intencity_answer;
+    console.log( this.assesmentForm.value, this.result );
+    this.assesmentForm.reset({
+      frequency_answer :0,
+      intencity_answer :0 });
     this.nextSlide();
   }
   restart() {
     this.result = 0;
-    this.slides.slideTo( 1 );
+    this.slides.slideTo( 0 );
   }
   exitQuestionnaire() {
+    this.result = 0;
+    this.slides.slideTo( 0 );
     this.router.navigateByUrl( 'tabs/home' );
   }
   finish() {
     this.user.firstTestScore = this.result;
-    this.user.username = this.username;
     if ( this.result ) {
       this.user.didTheInitialTest = true;
     }
