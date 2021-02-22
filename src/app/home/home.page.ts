@@ -42,11 +42,11 @@ export class HomePage {
     let hrs = myDate.getHours();
     let greet;
     if ( hrs < 12 )
-      return greet = "Good Morning";
+      return greet = "Good morning,";
     else if ( hrs >= 12 && hrs <= 17 )
-      return greet = 'Good Afternoon';
+      return greet = 'Good afternoon,';
     else if ( hrs >= 17 && hrs <= 24 )
-      return greet = 'Good Evening';
+      return greet = 'Good evening,';
   }
 
 }

@@ -8,8 +8,8 @@
 
 <ion-content [fullscreen]="true">
   <ion-grid>
-    <ion-row>
-      <ion-list>
+    <ion-row *ngFor="let score of user.everyDayScore">
+      <ion-list >
         <ion-item></ion-item>
       </ion-list>
     </ion-row>

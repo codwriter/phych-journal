@@ -1,10 +1,9 @@
 ion-slides {
   height: 100%;
-  ion-slide{
-     align-items: flex-start;
+  ion-slide {
+    align-items: flex-start;
   }
 }
-
 
 .swiper-slide {
   display: block;
@@ -32,6 +31,10 @@ p {
   color: var(--ion-color-step-600, grey);
 }
 
+span p {
+  color: var(--ion-text-color, red);
+  font-size: 14px;
+}
 p b {
   color: var(--ion-text-color, #000000);
 }

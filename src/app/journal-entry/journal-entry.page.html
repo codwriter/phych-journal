@@ -5,12 +5,96 @@
         <ion-icon name="close"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>journal-entry</ion-title>
+    <ion-title>Add Journal Entry</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-label>
-  Let's see how much DP or DA are you!
-</ion-label>
+  <ion-list lines="none">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h2 class="ion-text-wrap">Let's see how much DP or DA are you!</h2>
+        </ion-col>
+        <form>
+          <h3 class="ion-text-sm-wrap">Over the last 2 weeks, how often have you been bohered by any of the following
+            problems?</h3>
+          <ion-item button="true" detail (click)="toggleViewQ1()">
+            <ion-label class="ion-text-wrap">
+              My suroundings feel detached or unreal, as if there was a veil between me and outside world.
+            </ion-label>
+          </ion-item>
+          <div class="{{toggleQ1}}">
+            <ion-radio-group (click)="toggleViewQ1()">
+              <ion-item>
+                <ion-label>Not at all</ion-label>
+                <ion-radio slot="start" value="0"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Several days</ion-label>
+                <ion-radio slot="start" value="1"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>More than half the days</ion-label>
+                <ion-radio slot="start" value="2"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Nearly every day</ion-label>
+                <ion-radio slot="start" value="3"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </div>
+          <ion-item button="true" detail (click)="toggleViewQ2()">
+            <ion-label class="ion-text-wrap">
+              Out of the blue, i fell strange,as if i were not real or as if i were cut from the world.
+            </ion-label>
+          </ion-item>
+          <div class="{{toggleQ2}}">
+            <ion-radio-group (click)="toggleViewQ2()">
+              <ion-item>
+                <ion-label>Not at all</ion-label>
+                <ion-radio slot="start" value="0"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Several days</ion-label>
+                <ion-radio slot="start" value="1"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>More than half the days</ion-label>
+                <ion-radio slot="start" value="2"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Nearly every day</ion-label>
+                <ion-radio slot="start" value="3"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </div>
+          <ion-item>
+            <ion-label>How do you feel right now?</ion-label>
+          </ion-item>
+          <ion-radio-group>
+            <ion-item>
+              <ion-thumbnail slot="start">
+                <img src="assets/emojis/happy.png" />
+              </ion-thumbnail>
+              <ion-radio slot="start" value="0">
+              </ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-thumbnail slot="start">
+                <img src="assets/emojis/angry.png" />
+              </ion-thumbnail>
+              <ion-radio slot="start" value="1"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-thumbnail slot="start">
+                <img src="assets/emojis/sad.png" />
+              </ion-thumbnail>
+              <ion-radio slot="start" value="2"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </form>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
 </ion-content>

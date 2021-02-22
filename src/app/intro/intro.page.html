@@ -9,19 +9,23 @@
             of
             proper code use.</p>
         </div>
-        <ion-row>
-          <ion-col class="ion-align-self-center">
-            <ion-item lines="none">
-              <ion-label position="floating">What is your name?</ion-label>
-              <ion-input required="true" minlength="3" name="username" type="text" [(ngModel)]="username"></ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-button  class="ion-align-self-center" shape="round" (click)="nextSlide()">
-          <ion-icon name="arrow-forward-outline"></ion-icon>
-        </ion-button>
+        <form [formGroup]="usernameForm" #fform="ngForm" (ngSubmit)="onSumbit()" novalidate>
+          <ion-item lines="none">
+            <ion-label position="floating">What is your name?</ion-label>
+            <ion-input type="text" formControlName="username"></ion-input>
+          </ion-item>
+          <span *ngIf="formErrors.username"><p>{{ formErrors.username}}</p></span>
+          <ion-row>
+            <ion-col>
+              <ion-button class="ion-align-self-center" shape="round" type="sumbit">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </form>
       </ion-grid>
     </ion-slide>
+
     <ion-slide>
       <ion-grid>
         <ion-row>
