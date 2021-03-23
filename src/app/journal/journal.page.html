@@ -3,17 +3,44 @@
     <ion-title class="ion-text-center">
       Journal
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addDummyData()">Add dummy data</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-grid>
-    <ion-row *ngFor="let score of user.everyDayScore">
-      <ion-list >
-        <ion-item></ion-item>
-      </ion-list>
+    <ion-row>
+      <ion-col size="12" size-md="4" *ngFor="let score of user.everyDayScore">
+        <ion-card>
+          <ion-item>
+            <ion-icon name="pin" slot="start"></ion-icon>
+            <ion-label>Date: {{score.date}} Score: {{score.score}}</ion-label>
+            <ion-button fill="outline" slot="end">View</ion-button>
+          </ion-item>
+
+          <ion-card-content>
+            This is content, without any paragraph or header tags,
+            within an ion-card-content element.
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Score: {{score.score}}</ion-card-subtitle>
+            <ion-card-title>Date: {{score.date}}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            Keep close to Nature's heart... and break clear away, once in awhile,
+            and climb a mountain or spend a week in the woods. Wash your spirit clean.
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
     </ion-row>
-   
+
   </ion-grid>
   <!-- fab placed to the (vertical) center and end -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

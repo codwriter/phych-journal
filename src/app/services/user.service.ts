@@ -14,9 +14,17 @@ export class UserService {
    return this.user =  await this.storage.get( 'user' );
   }
   
-  updateUserInfo() {
-
+  updateUserInfo(user:User){
+  this.storage.set( "user", user );
   }
-
+  addDummydata() {
+    this.user = {
+      username: "test", didTheInitialTest: true, firstTestScore: 110, everyDayScore: [ { date: "1/3/2020", score: 15 },
+      { date: "1/3/2020", score: 15 },
+      { date: "1/3/2020", score: 12 },
+      { date: "1/3/2020", score: 11 } ]
+    };
+    this.storage.set( "user", this.user );
+}
 }
 

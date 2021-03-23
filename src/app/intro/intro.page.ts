@@ -61,11 +61,6 @@ export class IntroPage implements OnInit {
     }
   }
 
-
-  get errorControl() {
-    return this.usernameForm.controls;
-  }
-
   slideOpts = {
     initialSlide: 0,
     speed: 400,

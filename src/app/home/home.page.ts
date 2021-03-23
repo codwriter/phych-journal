@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { User } from '../shared/user';
 import { Router } from '@angular/router';
 import quotes from '../shared/quotes.json';
@@ -23,6 +23,7 @@ export class HomePage {
   }
   ionViewWillEnter() {
     this.shuffleArray( quotes );
+    this.userSrvc.getUserInfo().then( user => this.user = user );
   }
 
   shuffleArray( quotes ) {

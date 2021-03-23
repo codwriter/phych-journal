@@ -60,11 +60,7 @@ export class QuestionnairePage implements OnInit {
     this.result = 0;
     this.slides.slideTo( 0 );
   }
-  exitQuestionnaire() {
-    this.result = 0;
-    this.slides.slideTo( 0 );
-    this.router.navigateByUrl( 'tabs/home' );
-  }
+ 
   finish() {
     this.user.firstTestScore = this.result;
     if ( this.result ) {

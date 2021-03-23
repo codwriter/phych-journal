@@ -10,9 +10,9 @@ import { ModalController } from '@ionic/angular';
 export class JournalEntryPage implements OnInit {
   @ViewChild( 'divQuestionOne' ) questionOneDiv: any;
   constructor( private modalCtrl: ModalController, ) { }
-  expandedQ1: boolean = false;
+  expandedQ1: boolean = true;
   expandedQ2: boolean = false;
-  toggleQ1: string = "ion-hide";
+  toggleQ1: string = "";
   toggleQ2: string = "ion-hide";
   ngOnInit() {
   }
@@ -21,7 +21,7 @@ export class JournalEntryPage implements OnInit {
   }
 
   toggleViewQ1() {
-    if ( this.expandedQ1 == false ) {
+    if ( this.expandedQ1 == true ) {
       this.toggleQ1 = "";
       this.expandedQ1 = !this.expandedQ1;
     }

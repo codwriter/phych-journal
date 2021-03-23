@@ -14,14 +14,14 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <h2 class="ion-text-wrap">Let's see how much DP or DA are you!</h2>
+          <h2 class="ion-text-wrap">Let's see how much DP or DA are you today!</h2>
         </ion-col>
         <form>
-          <h3 class="ion-text-sm-wrap">Over the last 2 weeks, how often have you been bohered by any of the following
-            problems?</h3>
           <ion-item button="true" detail (click)="toggleViewQ1()">
             <ion-label class="ion-text-wrap">
-              My suroundings feel detached or unreal, as if there was a veil between me and outside world.
+              Have you felt as if you were standing
+              next to to yourself or watched yourself like looking at
+              someone else or as if in a movie?
             </ion-label>
           </ion-item>
           <div class="{{toggleQ1}}">
@@ -31,22 +31,22 @@
                 <ion-radio slot="start" value="0"></ion-radio>
               </ion-item>
               <ion-item>
-                <ion-label>Several days</ion-label>
+                <ion-label>Mild</ion-label>
                 <ion-radio slot="start" value="1"></ion-radio>
               </ion-item>
               <ion-item>
-                <ion-label>More than half the days</ion-label>
+                <ion-label>Moderate</ion-label>
                 <ion-radio slot="start" value="2"></ion-radio>
               </ion-item>
               <ion-item>
-                <ion-label>Nearly every day</ion-label>
+                <ion-label>Severe</ion-label>
                 <ion-radio slot="start" value="3"></ion-radio>
               </ion-item>
             </ion-radio-group>
           </div>
           <ion-item button="true" detail (click)="toggleViewQ2()">
             <ion-label class="ion-text-wrap">
-              Out of the blue, i fell strange,as if i were not real or as if i were cut from the world.
+              Have you felt as if your whole bosy or parts of your body were detached or did not belong to you?
             </ion-label>
           </ion-item>
           <div class="{{toggleQ2}}">
@@ -56,15 +56,116 @@
                 <ion-radio slot="start" value="0"></ion-radio>
               </ion-item>
               <ion-item>
-                <ion-label>Several days</ion-label>
+                <ion-label>Mild</ion-label>
                 <ion-radio slot="start" value="1"></ion-radio>
               </ion-item>
               <ion-item>
-                <ion-label>More than half the days</ion-label>
+                <ion-label>Moderate</ion-label>
                 <ion-radio slot="start" value="2"></ion-radio>
               </ion-item>
               <ion-item>
-                <ion-label>Nearly every day</ion-label>
+                <ion-label>Severe</ion-label>
+                <ion-radio slot="start" value="3"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </div>
+
+          <ion-item button="true" detail (click)="toggleViewQ2()">
+            <ion-label class="ion-text-wrap">
+              Have you felt unreal or like a stranger to yourself?
+            </ion-label>
+          </ion-item>
+          <div class="{{toggleQ2}}">
+            <ion-radio-group (click)="toggleViewQ2()">
+              <ion-item>
+                <ion-label>Not at all</ion-label>
+                <ion-radio slot="start" value="0"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Mild</ion-label>
+                <ion-radio slot="start" value="1"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Moderate</ion-label>
+                <ion-radio slot="start" value="2"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Severe</ion-label>
+                <ion-radio slot="start" value="3"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </div>
+          <ion-item button="true" detail (click)="toggleViewQ2()">
+            <ion-label class="ion-text-wrap">
+              Have you looked in the mirror and felt disconnected from your own image?
+            </ion-label>
+          </ion-item>
+          <div class="{{toggleQ2}}">
+            <ion-radio-group (click)="toggleViewQ2()">
+              <ion-item>
+                <ion-label>Not at all</ion-label>
+                <ion-radio slot="start" value="0"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Mild</ion-label>
+                <ion-radio slot="start" value="1"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Moderate</ion-label>
+                <ion-radio slot="start" value="2"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Severe</ion-label>
+                <ion-radio slot="start" value="3"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </div>
+          <ion-item button="true" detail (click)="toggleViewQ2()">
+            <ion-label class="ion-text-wrap">
+              Have you felt like you were in a dream or just going through the motions?
+            </ion-label>
+          </ion-item>
+          <div class="{{toggleQ2}}">
+            <ion-radio-group (click)="toggleViewQ2()">
+              <ion-item>
+                <ion-label>Not at all</ion-label>
+                <ion-radio slot="start" value="0"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Mild</ion-label>
+                <ion-radio slot="start" value="1"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Moderate</ion-label>
+                <ion-radio slot="start" value="2"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Severe</ion-label>
+                <ion-radio slot="start" value="3"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </div>
+          <ion-item button="true" detail (click)="toggleViewQ2()">
+            <ion-label class="ion-text-wrap">
+             Have you felt as if your speech, voice, movements or behaviours were somehow not controlled by you or connected to you?
+            </ion-label>
+          </ion-item>
+          <div class="{{toggleQ2}}">
+            <ion-radio-group (click)="toggleViewQ2()">
+              <ion-item>
+                <ion-label>Not at all</ion-label>
+                <ion-radio slot="start" value="0"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Mild</ion-label>
+                <ion-radio slot="start" value="1"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Moderate</ion-label>
+                <ion-radio slot="start" value="2"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Severe</ion-label>
                 <ion-radio slot="start" value="3"></ion-radio>
               </ion-item>
             </ion-radio-group>
