@@ -15,6 +15,7 @@ import { ResourcesService } from './services/resources.service';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 import { IonicStorageModule } from '@ionic/storage';
 import { UserService } from './services/user.service';
+import {  JournalEntryPageModule} from "./journal-entry/journal-entry.module";
 
 @NgModule( {
   declarations: [ AppComponent ],
@@ -25,6 +26,7 @@ import { UserService } from './services/user.service';
     AppRoutingModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
+    JournalEntryPageModule
   ],
   providers: [
     StatusBar,

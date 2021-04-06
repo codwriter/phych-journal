@@ -3,38 +3,35 @@
     <ion-title class="ion-text-center">
       Journal
     </ion-title>
-    <ion-buttons slot="end">
+ <!--    <ion-buttons slot="end">
       <ion-button (click)="addDummyData()">Add dummy data</ion-button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
+      <ion-col><canvas #barChart></canvas></ion-col>
       <ion-col size="12" size-md="4" *ngFor="let score of user.everyDayScore">
-        <ion-card>
-          <ion-item>
-            <ion-icon name="pin" slot="start"></ion-icon>
-            <ion-label>Date: {{score.date}} Score: {{score.score}}</ion-label>
-            <ion-button fill="outline" slot="end">View</ion-button>
-          </ion-item>
-
-          <ion-card-content>
-            This is content, without any paragraph or header tags,
-            within an ion-card-content element.
-          </ion-card-content>
-        </ion-card>
-
+       
         <ion-card>
           <ion-card-header>
-            <ion-card-subtitle>Score: {{score.score}}</ion-card-subtitle>
-            <ion-card-title>Date: {{score.date}}</ion-card-title>
+            <ion-row>
+              <ion-col size="9">
+            <ion-card-subtitle>Date: {{score.date|date}}</ion-card-subtitle>
+            <ion-card-title>Score: {{score.score}}</ion-card-title>
+            </ion-col>
+            <ion-col size="3">
+              <ion-avatar>
+              <img src="{{moodSetImg(score.mood)}}" />
+            </ion-avatar>
+        </ion-col>
+            </ion-row>
           </ion-card-header>
 
           <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
+            {{score.comment}}
           </ion-card-content>
         </ion-card>
 
@@ -44,7 +41,7 @@
   </ion-grid>
   <!-- fab placed to the (vertical) center and end -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="presentJournEntryModal()">
+    <ion-fab-button (click)="presentJournalEntryModal()">
       <ion-icon name="pencil-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
