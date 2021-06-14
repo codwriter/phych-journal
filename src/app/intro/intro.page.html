@@ -1,0 +1,47 @@
+<ion-content fullscreen class="ion-padding">
+  <ion-slides pager="true" [options]="slideOpts" #slides>
+    <ion-slide>
+      <ion-grid>
+        <div class="slide">
+          <h2>Welcome</h2>
+          <p>The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a
+            demonstration
+            of
+            proper code use.</p>
+        </div>
+        <form [formGroup]="usernameForm" #fform="ngForm" (ngSubmit)="onSumbit()" novalidate>
+          <ion-item lines="none">
+            <ion-label position="floating">What is your name?</ion-label>
+            <ion-input type="text" formControlName="username"></ion-input>
+          </ion-item>
+          <span *ngIf="formErrors.username"><p>{{ formErrors.username}}</p></span>
+          <ion-row>
+            <ion-col>
+              <ion-button class="ion-align-self-center" shape="round" type="sumbit">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-grid>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h2>Do you want to do the quiostionnaire now?</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="doQuestionnaire()">Let's do it</ion-button>
+            <ion-button (click)="endIntro()">Later</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,100 @@
+{
+    "questions": [
+        {
+            "id":0,
+           "questionText":"Feeling mechanical and 'robotic' when moving?" 
+        },
+        {
+            "id": 1,
+            "questionText": "Seeing oneself outside, as if looking in a mirror?"
+        },
+        {
+            "id": 2,
+            "questionText": "Unable to feel properly things touched with hands?"
+        },
+        {
+            "id": 3,
+            "questionText": "Urge to touch oneself to be reassured of body existence?"
+        },
+        {
+            "id": 4,
+            "questionText": "Feeling of being outside the body?"
+        },
+        {
+            "id": 5,
+            "questionText": "Body feels as if it didn't belong to self?"
+        },
+        {
+            "id": 6,
+            "questionText": "Feeling of being a detached observer of oneself?"
+        },
+        {
+            "id": 7,
+            "questionText": "Own voice sounds remote  and unreal?"
+        },
+        {
+            "id": 8,
+            "questionText": "Body feels very light, as if it were floating on air?"
+        },
+        {
+            "id": 9,
+            "questionText": "Smell of things no longer gives feeling of pleasure or dislike?"
+        },
+        {
+            "id": 10,
+            "questionText": "Unable to feel hunger or thirst?"
+        },
+        {
+            "id": 11,
+            "questionText": "Flavor of meals no longer gives feeling of pleasure or distaste?"
+        },
+        {
+            "id": 12,
+            "questionText": "No emotions felt when weeping or laughing"
+        },
+        {
+            "id": 13,
+            "questionText": "Unable to feel affection towards family and friends?"
+        },
+        {
+            "id": 14,
+            "questionText": "Feeling of not having any thoughts at all?"
+        },
+        {
+            "id": 15,
+            "questionText": "Personal memories feel as if one had not been involved in them?"
+        },
+        {
+            "id": 16,
+            "questionText": "Recently done things feel as if they had taken place long time ago?"
+        },
+        {
+            "id": 17,
+            "questionText": "Objects look smaller or further away?"
+        },
+        {
+            "id": 18,
+            "questionText": "Unable to picture things in mind?"
+        },
+        {
+            "id": 19,
+            "questionText": "When in a new situation, feeling as if it happened before?"
+        },
+        {
+            "id": 20,
+            "questionText": "Feeling unreal or cut-off from the world"
+        },
+        {
+            "id": 21,
+            "questionText": "Surroundings feel detached or unreal?"
+        },
+        {
+            "id": 22,
+            "questionText": "Favourite activities no longer enjoyable?"
+        },
+        {
+            "id": 23,
+            "questionText": "Things look flat, as if looking at a picture?"
+        }
+    ]
+}

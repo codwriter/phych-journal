@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { UserGuard } from './guards/user.guard';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import( './tabs/tabs.module' ).then( m => m.TabsPageModule ),
+    canActivate:[UserGuard]
+  },
+  {
+    path: 'intro',
+    loadChildren: () => import( './intro/intro.module' ).then( m => m.IntroPageModule ),
+  
+  },
+  {
+    path: 'questionnaire',
+    loadChildren: () => import('./questionnaire/questionnaire.module').then( m => m.QuestionnairePageModule)
   }
 ];
 @NgModule({
