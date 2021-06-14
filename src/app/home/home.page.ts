@@ -3,6 +3,7 @@ import { User } from '../shared/user';
 import { Router } from '@angular/router';
 import quotes from '../shared/quotes.json';
 import { UserService } from '../services/user.service';
+import { AlertController } from '@ionic/angular';
 
 @Component( {
   selector: 'app-home',
@@ -11,18 +12,22 @@ import { UserService } from '../services/user.service';
 } )
 export class HomePage {
   quotes: any = quotes;
-  user: User={username:'',didTheInitialTest:false,everyDayScore:[],firstTestScore:0};
+  user: User = { username: '', didTheInitialTest: false, everyDayScore: [], firstTestScore: 0 };
   welcomeMessage: string;
-  constructor( private router: Router,
-    private userSrvc:UserService,
+
+  constructor(
+    private router: Router,
+    private userSrvc: UserService,
+    private alertController: AlertController
   ) { }
 
   ngOnInit() {
     this.welcomeMessage = this.welcomeText();
     this.userSrvc.getUserInfo().then( user => this.user = user );
+    this.shuffleArray( quotes );
   }
   ionViewWillEnter() {
-    this.shuffleArray( quotes );
+
     this.userSrvc.getUserInfo().then( user => this.user = user );
   }
 
@@ -36,6 +41,31 @@ export class HomePage {
 
   questionnaire() {
     this.router.navigateByUrl( 'questionnaire' );
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create( {
+      cssClass: 'my-custom-class',
+      header: 'Result:',
+      message: 'You score suggests that you are.......\n Do you want to do the questionaire again?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: ( ) => {
+            
+          }
+        }, {
+          text: 'Okay',
+          handler: () => {
+            this.questionnaire();
+          }
+        }
+      ]
+    } );
+
+    await alert.present();
   }
 
   welcomeText() {

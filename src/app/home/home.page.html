@@ -6,18 +6,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content  class="ion-padding">
+<ion-content class="ion-padding">
   <ion-grid>
-    <ion-row >
-      <ion-col  *ngIf="user.username">
-        <ion-item lines="none"> 
-        <ion-label>{{welcomeMessage}} {{user.username}}</ion-label>
-      </ion-item>
-      </ion-col>
-      <ion-col *ngIf="user.firstTestScore">
+    <ion-row>
+      <ion-col *ngIf="user.username">
         <ion-item lines="none">
-        <ion-label>Score:</ion-label>
-        <ion-badge slot="end">{{user.firstTestScore}}</ion-badge>
+          <ion-label>{{welcomeMessage}} {{user.username}}</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="auto" *ngIf="user.firstTestScore">
+        <ion-item lines="none">
+          <ion-label>Score:</ion-label>
+          <ion-badge (click)="presentAlert()" slot="end">{{user.firstTestScore}}</ion-badge>
         </ion-item>
       </ion-col>
     </ion-row>
@@ -33,7 +33,7 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
+      <ion-col *ngIf="!user.firstTestScore">
         <ion-button expand="block" (click)="questionnaire()">Lets do the questionnaire</ion-button>
       </ion-col>
     </ion-row>
