@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Observable } from 'rxjs';
 import { User } from '../shared/user';
-import { Score } from "../shared/score";
-import { DatePipe } from '@angular/common';
 
 @Injectable( {
   providedIn: 'root'
@@ -19,11 +17,7 @@ export class UserService {
   updateUserInfo(user:User){
   this.storage.set( "user", user );
   }
-  insertNewScore( score ) {
-    var date = new Date();
-    date.setHours(0,0,0,0)
-    if (score.date ){}
-  }
+
   addDummydata() {
     this.user = {
       username: "test", didTheInitialTest: true, firstTestScore: 110, everyDayScore: [ { date: "1/3/2020", score: 15, comment: "", mood: -1 },
@@ -31,6 +25,14 @@ export class UserService {
        ]
     };
     this.storage.set( "user", this.user );
-}
+  }
+  selectedDayLog( date ) {
+    var __found = this.user.everyDayScore.filter( userDate => {
+      let splitDate = userDate.date.split( "T" );
+      if ( splitDate[ 0 ] == date )
+        return true;
+    } );
+   return __found ;
+  }
 }
 
