@@ -15,8 +15,8 @@
       <ion-col>
         <ion-item>
           <ion-label position="floating">Choose a Day to display: </ion-label>
-          <ion-datetime displayFormat="DD/MMMM/YY" pickerFormat="DD MMMM YYYY" [(ngModel)]="selectedDate"
-            (ionChange)="logDay(1)" value="{{selectedDate}}">
+          <ion-datetime displayFormat="DDD DD, MMMM YY" pickerFormat="DD MMMM YYYY" [(ngModel)]="selectedDate"
+            (ionChange)="logDay(1)" value="{{selectedDate}}" [pickerOptions]="customPickerOptions" >
           </ion-datetime>
         </ion-item>
       </ion-col>

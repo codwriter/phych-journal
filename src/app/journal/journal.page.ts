@@ -23,29 +23,46 @@ export class JournalPage {
     private userSrv: UserService, public toastController: ToastController ) {
     this.userSrv.getUserInfo().then( user => this.user = user );
     this.logDay( 0 );
+    this.customPickerOptions = {
+      buttons: [
+        {
+          text: 'Cancel',
+
+        },
+        {
+          text: 'Done',
+          handler: ( selected ) => {
+            if ( selected.month.value <= 10 ) {
+              selected.month.value = '0' + selected.month.value
+            }
+            this.selectedDate = selected.year.value + '-' + selected.month.value + '-' + selected.day.value; console.log( this.selectedDate )
+          }
+        },
+        {
+          text: 'Now',
+          handler: () => {
+            let date = new Date().toISOString().split( "T" );
+            this.selectedDate = date[ 0 ];
+          }
+
+        }
+      ]
+    }
   }
 
   logDay( number ) {
-    let tempDate;
     switch ( number ) {
       case 0:
-        this.selectedDate = new Date().toISOString();
-        console.log( "case 1", this.selectedDate );
-        tempDate = this.selectedDate.split( "T" );
-        this.score = this.userSrv.selectedDayLog( tempDate[ 0 ] );
+       let date = new Date().toISOString().split( "T" );
+        this.selectedDate = date[0];
+        this.score = this.userSrv.selectedDayLog( this.selectedDate );
         break;
-      case 1: tempDate = this.selectedDate.split( "T" );
-        this.score = this.userSrv.selectedDayLog( tempDate[ 0 ] );
+      case 1:
+        this.score = this.userSrv.selectedDayLog( this.selectedDate );
         break;
-      case 2:
+      default:
         break;
     }
-
-    /*   if ( this.selectedDate == null ) {
-        this.selectedDate = new Date().toISOString();
-      }
-      let selectedDate = this.selectedDate.split( "T" );
-      this.score = this.userSrv.selectedDayLog( selectedDate[ 0 ] ); */
   }
 
   ionViewWillEnter() {
@@ -55,7 +72,8 @@ export class JournalPage {
 
   async presentJournalEntryModal() {
     const journalModal = await this.modalCtrl.create( {
-      component: JournalEntryPage
+      component: JournalEntryPage,
+      cssClass: 'my-custom-modal-css'
     } );
     journalModal.present();
     var { data } = await journalModal.onDidDismiss();
