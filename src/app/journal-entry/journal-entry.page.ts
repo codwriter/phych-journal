@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { Score } from '../shared/score';
@@ -9,11 +9,11 @@ import { surveyQuestions } from '../shared/shortQuestions';
   templateUrl: './journal-entry.page.html',
   styleUrls: [ './journal-entry.page.scss' ],
 } )
-export class JournalEntryPage implements OnInit {
+export class JournalEntryPage {
   questionsForm: FormGroup;
   score: Score = { date: "", comment: "", mood: 0, score: 0 };
-  
-  constructor( private modalCtrl: ModalController, private formBuilder: FormBuilder,public data:surveyQuestions ) {
+ 
+  constructor( private modalCtrl: ModalController, private formBuilder: FormBuilder, public data: surveyQuestions ) {
     this.questionsForm = this.formBuilder.group( {
       question1: '',
       question2: '',
@@ -25,6 +25,9 @@ export class JournalEntryPage implements OnInit {
       comment: ''
     } );
   }
+  
+
+
   expandedQ1: boolean = true;
   expandedQ2: boolean = false;
   expandedQ3: boolean = false;
@@ -38,8 +41,7 @@ export class JournalEntryPage implements OnInit {
   toggleQ5: string = "ion-hide";
   toggleQ6: string = "ion-hide";
 
-  ngOnInit() {
-  }
+  
   dismiss() {
     this.modalCtrl.dismiss();
   }
@@ -110,45 +112,39 @@ export class JournalEntryPage implements OnInit {
     }
   }
 
-  calculateScore(values) {
-    let sum=0;
-    if (values.question1=="" )
+  calculateScore( values ) {
+    let sum = 0;
+    if ( values.question1 == "" )
       sum += 0;
-    else
-    { sum += parseInt( values.question1 ); }
+    else { sum += parseInt( values.question1 ); }
 
     if ( values.question2 == "" )
-      sum +=  0;
-    else
-    { sum += parseInt( values.question2 ); }
+      sum += 0;
+    else { sum += parseInt( values.question2 ); }
 
     if ( values.question3 == "" )
-      sum +=  0;
-    else
-    { sum += parseInt( values.question3 ); }
+      sum += 0;
+    else { sum += parseInt( values.question3 ); }
 
-    if ( values.question4 == "")
-      sum +=  0;
-    else
-    { sum += parseInt( values.question4 ); }
+    if ( values.question4 == "" )
+      sum += 0;
+    else { sum += parseInt( values.question4 ); }
 
     if ( values.question5 == "" )
-      sum +=  0;
-    else
-    { sum += parseInt( values.question5 ); }
+      sum += 0;
+    else { sum += parseInt( values.question5 ); }
 
     if ( values.question6 == "" )
-      sum +=  0;
-    else
-    { sum += parseInt( values.question6 ); }
-    
+      sum += 0;
+    else { sum += parseInt( values.question6 ); }
+
     return sum;
-    
+
   }
 
   formSubmit() {
     this.score.date = new Date().toISOString();
-    this.score.score = this.calculateScore(this.questionsForm.value);
+    this.score.score = this.calculateScore( this.questionsForm.value );
     if ( !this.questionsForm.value.mood )
       this.score.mood = -1;
     else
@@ -158,8 +154,8 @@ export class JournalEntryPage implements OnInit {
       this.score.comment = " ";
     else
       this.score.comment = this.questionsForm.value.comment;
-    console.log( this.score);
+    console.log( this.score );
     this.modalCtrl.dismiss( { 'score': this.score } );
   }
 }
- 
+

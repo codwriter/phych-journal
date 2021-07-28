@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-tabs>\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"home\">\n      <ion-icon name=\"home\"></ion-icon>\n      <ion-label>Your Psych</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"journal\" class=\"custom-tab\">\n      <ion-icon name=\"journal\"></ion-icon>\n      <ion-label>Journal</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"resources\">\n      <ion-icon name=\"library\"></ion-icon>\n      <ion-label>Resources</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n</ion-tabs>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-tabs>\r\n  <ion-tab-bar slot=\"bottom\">\r\n    <ion-tab-button tab=\"home\">\r\n      <ion-icon name=\"home\"></ion-icon>\r\n      <ion-label>Home</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"journal\" class=\"custom-tab\">\r\n      <ion-icon name=\"journal\"></ion-icon>\r\n      <ion-label>Journal</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"resources\">\r\n      <ion-icon name=\"library\"></ion-icon>\r\n      <ion-label>Resources</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n</ion-tabs>\r\n");
 
 /***/ }),
 

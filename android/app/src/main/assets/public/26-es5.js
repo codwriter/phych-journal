@@ -267,8 +267,8 @@
                   return refresherContent.componentOnReady();
 
                 case 5:
-                  pullingSpinner = refresherContent.querySelector('.refresher-pulling ion-spinner');
-                  refreshingSpinner = refresherContent.querySelector('.refresher-refreshing ion-spinner');
+                  pullingSpinner = referenceEl.querySelector('ion-refresher-content .refresher-pulling ion-spinner');
+                  refreshingSpinner = referenceEl.querySelector('ion-refresher-content .refresher-refreshing ion-spinner');
                   return _context.abrupt("return", pullingSpinner !== null && refreshingSpinner !== null && (mode === 'ios' && Object(_ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["i"])('mobile') && referenceEl.style.webkitOverflowScrolling !== undefined || mode === 'md'));
 
                 case 8:

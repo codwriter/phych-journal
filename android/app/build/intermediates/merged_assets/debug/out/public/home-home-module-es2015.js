@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-title class=\"ion-text-center\">\n      Home\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content  class=\"ion-padding\">\n  <ion-grid>\n    <ion-row *ngIf=\"user.username\">\n      <ion-col>\n        <ion-label>\n          {{welcomeMessage}} {{user.username}}</ion-label>\n      </ion-col>\n      <ion-col *ngIf=\"user.firstTestScore\">\n        <ion-item>\n        <ion-label>Score</ion-label>\n        <ion-badge slot=\"end\">{{user.firstTestScore}}</ion-badge>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-card>\n          <ion-card-header>\n            <ion-card-title>Quote Of the day</ion-card-title>\n            <ion-card-subtitle>{{quotes[1].quoteAuthor}}</ion-card-subtitle>\n          </ion-card-header>\n          <ion-card-content>{{quotes[1].quoteText}}</ion-card-content>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-button expand=\"block\" (click)=\"questionnaire()\">Lets do the questionnaire</ion-button>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title class=\"ion-text-center\">\r\n      Home\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"ion-padding\">\r\n  <ion-grid>\r\n    <ion-row>\r\n      <ion-col *ngIf=\"user.username\">\r\n        <ion-item lines=\"none\">\r\n          <ion-label>{{welcomeMessage}} {{user.username}}</ion-label>\r\n        </ion-item>\r\n      </ion-col>\r\n      <ion-col (click)=\"presentAlert()\" size=\"auto\" *ngIf=\"user.firstTestScore\">\r\n        <ion-item lines=\"none\">\r\n          <ion-label>Score:</ion-label>\r\n          <ion-badge slot=\"end\">{{user.firstTestScore}}</ion-badge>\r\n        </ion-item>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-card>\r\n          <ion-card-header>\r\n            <ion-card-title>Quote of the day</ion-card-title>\r\n\r\n          </ion-card-header>\r\n          <ion-card-content>{{quotes[1].quoteText}}</ion-card-content>\r\n            <ion-card-subtitle class=\"ion-float-right ion-padding-end ion-padding-bottom\">{{quotes[1].quoteAuthor}}</ion-card-subtitle>\r\n        </ion-card>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col *ngIf=\"!user.firstTestScore\">\r\n        <ion-button expand=\"block\" (click)=\"questionnaire()\">Lets do the questionnaire</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n\r\n  </ion-grid>\r\n</ion-content>");
 
 /***/ }),
 
@@ -114,32 +114,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePage", function() { return HomePage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var _shared_quotes_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/quotes.json */ "./src/app/shared/quotes.json");
-var _shared_quotes_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../shared/quotes.json */ "./src/app/shared/quotes.json", 1);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _shared_quotes_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/quotes.json */ "./src/app/shared/quotes.json");
+var _shared_quotes_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../shared/quotes.json */ "./src/app/shared/quotes.json", 1);
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+
 
 
 
 
 
 let HomePage = class HomePage {
-    constructor(storage, router) {
-        this.storage = storage;
+    constructor(router, userSrvc, alertController) {
         this.router = router;
-        this.quotes = _shared_quotes_json__WEBPACK_IMPORTED_MODULE_4__;
-        this.user = { username: "", didTheInitialTest: false, everyDayScore: [], firstTestScore: 0 };
-        this.storage.get('user').then(user => {
-            if (user) {
-                this.user = user;
-            }
-        });
+        this.userSrvc = userSrvc;
+        this.alertController = alertController;
+        this.quotes = _shared_quotes_json__WEBPACK_IMPORTED_MODULE_3__;
+        this.user = { username: '', didTheInitialTest: false, everyDayScore: [], firstTestScore: 0 };
     }
     ngOnInit() {
         this.welcomeMessage = this.welcomeText();
+        this.userSrvc.getUserInfo().then(user => this.user = user);
+        this.shuffleArray(_shared_quotes_json__WEBPACK_IMPORTED_MODULE_3__);
     }
     ionViewWillEnter() {
-        this.shuffleArray(_shared_quotes_json__WEBPACK_IMPORTED_MODULE_4__);
+        this.userSrvc.getUserInfo().then(user => this.user = user);
     }
     shuffleArray(quotes) {
         for (let i = quotes.length - 1; i > 0; i--) {
@@ -150,21 +150,46 @@ let HomePage = class HomePage {
     questionnaire() {
         this.router.navigateByUrl('questionnaire');
     }
+    presentAlert() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const alert = yield this.alertController.create({
+                cssClass: 'my-custom-class',
+                header: 'Result:',
+                message: 'You score suggests that you are.......\n Do you want to do the questionaire again?',
+                buttons: [
+                    {
+                        text: 'Cancel',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: () => {
+                        }
+                    }, {
+                        text: 'Okay',
+                        handler: () => {
+                            this.questionnaire();
+                        }
+                    }
+                ]
+            });
+            yield alert.present();
+        });
+    }
     welcomeText() {
         let myDate = new Date();
         let hrs = myDate.getHours();
         let greet;
         if (hrs < 12)
-            return greet = "Good Morning";
+            return greet = "Good morning,";
         else if (hrs >= 12 && hrs <= 17)
-            return greet = 'Good Afternoon';
+            return greet = 'Good afternoon,';
         else if (hrs >= 17 && hrs <= 24)
-            return greet = 'Good Evening';
+            return greet = 'Good evening,';
     }
 };
 HomePage.ctorParameters = () => [
-    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_2__["Storage"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"] }
 ];
 HomePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

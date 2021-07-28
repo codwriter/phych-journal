@@ -635,6 +635,16 @@
             }
           }
         }, {
+          key: "hasLabel",
+          get: function get() {
+            return !!this.el.querySelector('ion-label');
+          }
+        }, {
+          key: "hasIcon",
+          get: function get() {
+            return !!this.el.querySelector('ion-icon');
+          }
+        }, {
           key: "render",
           value: function render() {
             var _class;
@@ -673,16 +683,6 @@
               part: "indicator-background",
               "class": "segment-button-indicator-background"
             })));
-          }
-        }, {
-          key: "hasLabel",
-          get: function get() {
-            return !!this.el.querySelector('ion-label');
-          }
-        }, {
-          key: "hasIcon",
-          get: function get() {
-            return !!this.el.querySelector('ion-icon');
           }
         }, {
           key: "el",

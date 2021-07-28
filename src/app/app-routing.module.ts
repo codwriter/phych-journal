@@ -16,7 +16,13 @@ const routes: Routes = [
   {
     path: 'questionnaire',
     loadChildren: () => import('./questionnaire/questionnaire.module').then( m => m.QuestionnairePageModule)
+  },
+  {
+    path: 'statistics',
+    loadChildren: () => import( './statistics/statistics.module' ).then( m => m.StatisticsPageModule ),
+    canActivate: [ UserGuard ]
   }
+
 ];
 @NgModule({
   imports: [

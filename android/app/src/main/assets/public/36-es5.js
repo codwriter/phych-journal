@@ -81,25 +81,40 @@
             }
           }
         }, {
-          key: "onKeyboardWillHide",
-          value: function onKeyboardWillHide() {
-            var _this = this;
-
-            setTimeout(function () {
-              return _this.keyboardVisible = false;
-            }, 50);
-          }
-        }, {
-          key: "onKeyboardWillShow",
-          value: function onKeyboardWillShow() {
-            if (this.el.getAttribute('slot') !== 'top') {
-              this.keyboardVisible = true;
-            }
-          }
-        }, {
           key: "componentWillLoad",
           value: function componentWillLoad() {
             this.selectedTabChanged();
+          }
+        }, {
+          key: "connectedCallback",
+          value: function connectedCallback() {
+            var _this = this;
+
+            if (typeof window !== 'undefined') {
+              this.keyboardWillShowHandler = function () {
+                if (_this.el.getAttribute('slot') !== 'top') {
+                  _this.keyboardVisible = true;
+                }
+              };
+
+              this.keyboardWillHideHandler = function () {
+                setTimeout(function () {
+                  return _this.keyboardVisible = false;
+                }, 50);
+              };
+
+              window.addEventListener('keyboardWillShow', this.keyboardWillShowHandler);
+              window.addEventListener('keyboardWillHide', this.keyboardWillHideHandler);
+            }
+          }
+        }, {
+          key: "disconnectedCallback",
+          value: function disconnectedCallback() {
+            if (typeof window !== 'undefined') {
+              window.removeEventListener('keyboardWillShow', this.keyboardWillShowHandler);
+              window.removeEventListener('keyboardWillHide', this.keyboardWillHideHandler);
+              this.keyboardWillShowHandler = this.keyboardWillHideHandler = undefined;
+            }
           }
         }, {
           key: "render",
@@ -203,6 +218,31 @@
             }
           }
         }, {
+          key: "hasLabel",
+          get: function get() {
+            return !!this.el.querySelector('ion-label');
+          }
+        }, {
+          key: "hasIcon",
+          get: function get() {
+            return !!this.el.querySelector('ion-icon');
+          }
+        }, {
+          key: "tabIndex",
+          get: function get() {
+            if (this.disabled) {
+              return -1;
+            }
+
+            var hasTabIndex = this.el.hasAttribute('tabindex');
+
+            if (hasTabIndex) {
+              return this.el.getAttribute('tabindex');
+            }
+
+            return 0;
+          }
+        }, {
           key: "render",
           value: function render() {
             var _class;
@@ -241,31 +281,6 @@
             }, Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)), mode === 'md' && Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect", {
               type: "unbounded"
             })));
-          }
-        }, {
-          key: "hasLabel",
-          get: function get() {
-            return !!this.el.querySelector('ion-label');
-          }
-        }, {
-          key: "hasIcon",
-          get: function get() {
-            return !!this.el.querySelector('ion-icon');
-          }
-        }, {
-          key: "tabIndex",
-          get: function get() {
-            if (this.disabled) {
-              return -1;
-            }
-
-            var hasTabIndex = this.el.hasAttribute('tabindex');
-
-            if (hasTabIndex) {
-              return this.el.getAttribute('tabindex');
-            }
-
-            return 0;
           }
         }, {
           key: "el",

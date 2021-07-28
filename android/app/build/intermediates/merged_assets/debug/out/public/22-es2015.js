@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-9d5c8ee3.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-9d5c8ee3.js");
 /* harmony import */ var _helpers_90f46169_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-90f46169.js */ "./node_modules/@ionic/core/dist/esm/helpers-90f46169.js");
 /* harmony import */ var _animation_54fe0237_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animation-54fe0237.js */ "./node_modules/@ionic/core/dist/esm/animation-54fe0237.js");
-/* harmony import */ var _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index-1eeeab2e.js */ "./node_modules/@ionic/core/dist/esm/index-1eeeab2e.js");
+/* harmony import */ var _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index-d8cfb4a8.js */ "./node_modules/@ionic/core/dist/esm/index-d8cfb4a8.js");
 /* harmony import */ var _hardware_back_button_4a6b37fb_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./hardware-back-button-4a6b37fb.js */ "./node_modules/@ionic/core/dist/esm/hardware-back-button-4a6b37fb.js");
 /* harmony import */ var _overlays_12c20431_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./overlays-12c20431.js */ "./node_modules/@ionic/core/dist/esm/overlays-12c20431.js");
 /* harmony import */ var _theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./theme-ff3fc52f.js */ "./node_modules/@ionic/core/dist/esm/theme-ff3fc52f.js");
@@ -331,7 +331,7 @@ const Popover = class {
     }
     const data = Object.assign(Object.assign({}, this.componentProps), { popover: this.el });
     this.usersElement = await Object(_framework_delegate_4584ab5a_js__WEBPACK_IMPORTED_MODULE_8__["a"])(this.delegate, container, this.component, ['popover-viewport', this.el['s-sc']], data);
-    await Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_4__["e"])(this.usersElement);
+    await Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_4__["e"])(this.usersElement);
     return Object(_overlays_12c20431_js__WEBPACK_IMPORTED_MODULE_6__["d"])(this, 'popoverEnter', iosEnterAnimation, mdEnterAnimation, this.event);
   }
   /**

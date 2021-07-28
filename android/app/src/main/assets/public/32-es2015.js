@@ -381,6 +381,7 @@ const Select = class {
         [mode]: true,
         'in-item': Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_5__["h"])('ion-item', el),
         'select-disabled': disabled,
+        'select-expanded': isExpanded
       } }, Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { "aria-hidden": "true", class: selectTextClasses, part: textPart }, selectText), Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "select-icon", role: "presentation", part: "icon" }, Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "select-icon-inner" })), Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__["h"])("label", { id: labelId }, displayLabel), Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__["h"])("button", { type: "button", disabled: disabled, id: inputId, "aria-labelledby": labelId, "aria-haspopup": "listbox", "aria-expanded": `${isExpanded}`, onFocus: this.onFocus, onBlur: this.onBlur, ref: (focusEl => this.focusEl = focusEl) })));
   }
   get el() { return Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this); }

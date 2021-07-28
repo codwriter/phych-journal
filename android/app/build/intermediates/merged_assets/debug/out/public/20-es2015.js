@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-9d5c8ee3.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-9d5c8ee3.js");
 /* harmony import */ var _helpers_90f46169_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-90f46169.js */ "./node_modules/@ionic/core/dist/esm/helpers-90f46169.js");
 /* harmony import */ var _animation_54fe0237_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animation-54fe0237.js */ "./node_modules/@ionic/core/dist/esm/animation-54fe0237.js");
-/* harmony import */ var _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index-1eeeab2e.js */ "./node_modules/@ionic/core/dist/esm/index-1eeeab2e.js");
+/* harmony import */ var _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index-d8cfb4a8.js */ "./node_modules/@ionic/core/dist/esm/index-d8cfb4a8.js");
 /* harmony import */ var _cubic_bezier_eea9a7a9_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./cubic-bezier-eea9a7a9.js */ "./node_modules/@ionic/core/dist/esm/cubic-bezier-eea9a7a9.js");
 /* harmony import */ var _gesture_controller_31cb6bb9_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./gesture-controller-31cb6bb9.js */ "./node_modules/@ionic/core/dist/esm/gesture-controller-31cb6bb9.js");
 /* harmony import */ var _index_f49d994d_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./index-f49d994d.js */ "./node_modules/@ionic/core/dist/esm/index-f49d994d.js");
@@ -410,7 +410,7 @@ const Modal = class {
     }
     const componentProps = Object.assign(Object.assign({}, this.componentProps), { modal: this.el });
     this.usersElement = await Object(_framework_delegate_4584ab5a_js__WEBPACK_IMPORTED_MODULE_11__["a"])(this.delegate, container, this.component, ['ion-page'], componentProps);
-    await Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_4__["e"])(this.usersElement);
+    await Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_4__["e"])(this.usersElement);
     Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__["c"])(() => this.el.classList.add('show-modal'));
     await Object(_overlays_12c20431_js__WEBPACK_IMPORTED_MODULE_9__["d"])(this, 'modalEnter', iosEnterAnimation, mdEnterAnimation, this.presentingElement);
     if (this.swipeToClose) {

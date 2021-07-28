@@ -1416,6 +1416,13 @@
             });
           }
         }], [{
+          key: "components",
+          set: function set(components) {
+            var Class = this;
+            if (!Class.use) return;
+            Class.use(components);
+          }
+        }, {
           key: "installModule",
           value: function installModule(module) {
             var Class = this;
@@ -1464,13 +1471,6 @@
             }
 
             return Class.installModule.apply(Class, [module].concat(params));
-          }
-        }, {
-          key: "components",
-          set: function set(components) {
-            var Class = this;
-            if (!Class.use) return;
-            Class.use(components);
           }
         }]);
 

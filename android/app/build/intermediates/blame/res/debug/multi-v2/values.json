@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\thana\\OneDrive\\Υπολογιστής\\Projects\\Ionic-Native app (Deassociation)\\phych-journal\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Projects\\phych-journal\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\thana\\.gradle\\caches\\transforms-2\\files-2.1\\93fa951bb50245f79bfdb3046a233a07\\coordinatorlayout-1.1.0\\res\\values\\values.xml",
@@ -42,22 +42,39 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\thana\\OneDrive\\Υπολογιστής\\Projects\\Ionic-Native app (Deassociation)\\phych-journal\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Projects\\phych-journal\\android\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "4,11,18",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "93,413,655",
-                        "endLines": "9,15,20",
-                        "endColumns": "12,12,12",
-                        "endOffsets": "407,648,803"
+                        "startLines": "2,5,4,3",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "57,231,172,109",
+                        "endColumns": "50,62,57,61",
+                        "endOffsets": "103,289,225,166"
                     },
                     "to": {
-                        "startLines": "770,776,781",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "56056,56375,56615",
-                        "endLines": "775,780,783",
-                        "endColumns": "12,12,12",
-                        "endOffsets": "56370,56610,56763"
+                        "startLines": "672,700,746,756",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "43321,46543,53883,54990",
+                        "endColumns": "50,62,57,61",
+                        "endOffsets": "43367,46601,53936,55047"
+                    }
+                },
+                {
+                    "source": "C:\\Projects\\phych-journal\\node_modules\\@capacitor\\android\\capacitor\\build\\intermediates\\packaged_res\\debug\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,6,7,8,9,20",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,101,148,253,315,349,393,978",
+                        "endLines": "2,3,4,6,7,8,9,22",
+                        "endColumns": "45,46,50,61,33,43,78,22",
+                        "endOffsets": "96,143,194,310,344,388,467,1088"
+                    },
+                    "to": {
+                        "startLines": "115,116,117,675,745,752,753,7014",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "7016,7062,7109,43653,53849,54743,54787,436515",
+                        "endLines": "115,116,117,675,745,752,753,7016",
+                        "endColumns": "45,46,50,61,33,43,78,22",
+                        "endOffsets": "7057,7104,7155,43710,53878,54782,54861,436625"
                     }
                 },
                 {
@@ -80,42 +97,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\thana\\OneDrive\\Υπολογιστής\\Projects\\Ionic-Native app (Deassociation)\\phych-journal\\android\\app\\src\\main\\res\\values\\ic_launcher_background.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "56",
-                        "endOffsets": "107"
-                    },
-                    "to": {
-                        "startLines": "171",
-                        "startColumns": "4",
-                        "startOffsets": "10935",
-                        "endColumns": "56",
-                        "endOffsets": "10987"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\thana\\OneDrive\\Υπολογιστής\\Projects\\Ionic-Native app (Deassociation)\\phych-journal\\node_modules\\@capacitor\\android\\capacitor\\build\\intermediates\\packaged_res\\debug\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,6,7,8,9,20",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,101,148,253,315,349,393,978",
-                        "endLines": "2,3,4,6,7,8,9,22",
-                        "endColumns": "45,46,50,61,33,43,78,22",
-                        "endOffsets": "96,143,194,310,344,388,467,1088"
-                    },
-                    "to": {
-                        "startLines": "115,116,117,675,745,752,753,7014",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "7016,7062,7109,43653,53849,54743,54787,436515",
-                        "endLines": "115,116,117,675,745,752,753,7016",
-                        "endColumns": "45,46,50,61,33,43,78,22",
-                        "endOffsets": "7057,7104,7155,43710,53878,54782,54861,436625"
-                    }
-                },
-                {
                     "source": "C:\\Users\\thana\\.gradle\\caches\\transforms-2\\files-2.1\\f720b24cc490c109d50c0a0a1e6bf186\\jetified-play-services-basement-17.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,7",
@@ -130,23 +111,6 @@
                         "startOffsets": "40260,45182",
                         "endColumns": "67,166",
                         "endOffsets": "40323,45344"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\thana\\OneDrive\\Υπολογιστής\\Projects\\Ionic-Native app (Deassociation)\\phych-journal\\android\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "2,5,4,3",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,226,168,106",
-                        "endColumns": "50,62,57,61",
-                        "endOffsets": "101,284,221,163"
-                    },
-                    "to": {
-                        "startLines": "672,700,746,756",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "43321,46543,53883,54990",
-                        "endColumns": "50,62,57,61",
-                        "endOffsets": "43367,46601,53936,55047"
                     }
                 },
                 {
@@ -166,6 +130,25 @@
                         "endLines": "192,193,299,300,301,302,303,304,305,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563,564,565,566,567,568,569,570,571,572,573,574,575,576,585,586,598,599,600,601,602,603,604,605,606,607,611,640,755,3056,3060,3061,3065,3066,3589,3590,5468,5728,5760,5802,5809",
                         "endColumns": "68,62,69,67,71,69,60,73,72,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,64,58,58,59,59,59,59,59,59,59,59,59,59,58,59,59,59,59,59,59,59,59,59,59,58,59,59,58,58,58,58,58,58,34,34,54,62,54,57,56,49,60,56,33,34,34,69,70,116,12,109,12,128,71,66,24,24,24,24,24",
                         "endOffsets": "12293,12356,19569,19637,19709,19779,19840,19914,19987,34129,34190,34252,34316,34378,34439,34507,34607,34667,34733,34806,34875,34932,34984,35046,35636,35712,35777,35836,35895,35955,36015,36075,36135,36195,36255,36315,36375,36435,36495,36554,36614,36674,36734,36794,36854,36914,36974,37034,37094,37154,37213,37273,37333,37392,37451,37510,37569,37628,37687,38114,38149,38755,38818,38873,38931,38988,39038,39099,39156,39190,39225,39403,41130,54985,207659,207860,207970,208171,208300,245616,245683,353196,368148,370213,372193,372570"
+                    }
+                },
+                {
+                    "source": "C:\\Projects\\phych-journal\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "4,11,18",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "97,424,673",
+                        "endLines": "9,15,20",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "416,663,823"
+                    },
+                    "to": {
+                        "startLines": "770,776,781",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "56056,56375,56615",
+                        "endLines": "775,780,783",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "56370,56610,56763"
                     }
                 },
                 {
@@ -257,6 +240,23 @@
                         "endLines": "4415,4422,4433,6473,6478",
                         "endColumns": "24,24,24,24,24",
                         "endOffsets": "296035,296420,297017,406202,406472"
+                    }
+                },
+                {
+                    "source": "C:\\Projects\\phych-journal\\android\\app\\src\\main\\res\\values\\ic_launcher_background.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endColumns": "56",
+                        "endOffsets": "109"
+                    },
+                    "to": {
+                        "startLines": "171",
+                        "startColumns": "4",
+                        "startOffsets": "10935",
+                        "endColumns": "56",
+                        "endOffsets": "10987"
                     }
                 },
                 {

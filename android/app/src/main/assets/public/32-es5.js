@@ -610,6 +610,11 @@
             return this.getText() !== '';
           }
         }, {
+          key: "childOpts",
+          get: function get() {
+            return Array.from(this.el.querySelectorAll('ion-select-option'));
+          }
+        }, {
           key: "getText",
           value: function getText() {
             var selectedText = this.selectedText;
@@ -684,7 +689,7 @@
               "aria-haspopup": "listbox",
               "aria-disabled": disabled ? 'true' : null,
               "aria-label": displayLabel,
-              "class": (_class = {}, _defineProperty(_class, mode, true), _defineProperty(_class, 'in-item', Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_5__["h"])('ion-item', el)), _defineProperty(_class, 'select-disabled', disabled), _class)
+              "class": (_class = {}, _defineProperty(_class, mode, true), _defineProperty(_class, 'in-item', Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_5__["h"])('ion-item', el)), _defineProperty(_class, 'select-disabled', disabled), _defineProperty(_class, 'select-expanded', isExpanded), _class)
             }, Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
               "aria-hidden": "true",
               "class": selectTextClasses,
@@ -710,11 +715,6 @@
                 return _this8.focusEl = focusEl;
               }
             }));
-          }
-        }, {
-          key: "childOpts",
-          get: function get() {
-            return Array.from(this.el.querySelectorAll('ion-select-option'));
           }
         }, {
           key: "el",

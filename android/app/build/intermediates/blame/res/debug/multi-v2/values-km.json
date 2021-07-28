@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\thana\\OneDrive\\Υπολογιστής\\Projects\\Ionic-Native app (Deassociation)\\phych-journal\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-km\\values-km.xml",
+            "outputFile": "C:\\Projects\\phych-journal\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-km\\values-km.xml",
             "map": [
                 {
                     "source": "C:\\Users\\thana\\.gradle\\caches\\transforms-2\\files-2.1\\cf23515831a30cf8e0e5ff774beb1451\\core-1.2.0\\res\\values-km\\values-km.xml",

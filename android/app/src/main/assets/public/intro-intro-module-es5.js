@@ -22,7 +22,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-content fullscreen class=\"ion-padding\">\n  <ion-slides pager=\"true\" [options]=\"slideOpts\" #slides>\n    <ion-slide>\n      <ion-grid>\n        <div class=\"slide\">\n          <h2>Welcome</h2>\n          <p>The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a\n            demonstration\n            of\n            proper code use.</p>\n        </div>\n        <ion-row>\n          <ion-col class=\"ion-align-self-center\">\n            <ion-item lines=\"none\">\n              <ion-label position=\"floating\">What is you name?</ion-label>\n              <ion-input required=\"true\" minlength=\"3\" name=\"username\" type=\"text\" [(ngModel)]=\"username\"></ion-input>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n        <ion-button  class=\"ion-align-self-center\" shape=\"round\" (click)=\"nextSlide()\">\n          <ion-icon name=\"arrow-forward-outline\"></ion-icon>\n        </ion-button>\n      </ion-grid>\n    </ion-slide>\n    <ion-slide>\n      <ion-grid>\n        <ion-row>\n          <ion-col>\n            <h2>Do you want to do the quiostionnaire now?</h2>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-button (click)=\"doQuestionnaire()\">Let's do it</ion-button>\n            <ion-button (click)=\"endIntro()\">Later</ion-button>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-slide>\n\n\n  </ion-slides>\n</ion-content>";
+      __webpack_exports__["default"] = "<ion-content fullscreen class=\"ion-padding\">\r\n  <ion-slides pager=\"true\" [options]=\"slideOpts\" #slides>\r\n    <ion-slide>\r\n      <ion-grid>\r\n        <div class=\"slide\">\r\n          <h2>Welcome</h2>\r\n          <p>The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a\r\n            demonstration\r\n            of\r\n            proper code use.</p>\r\n        </div>\r\n        <form [formGroup]=\"usernameForm\" #fform=\"ngForm\" (ngSubmit)=\"onSumbit()\" novalidate>\r\n          <ion-item lines=\"none\">\r\n            <ion-label position=\"floating\">What is your name?</ion-label>\r\n            <ion-input type=\"text\" formControlName=\"username\"></ion-input>\r\n          </ion-item>\r\n          <span *ngIf=\"formErrors.username\"><p>{{ formErrors.username}}</p></span>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-button class=\"ion-align-self-center\" shape=\"round\" type=\"sumbit\">\r\n                <ion-icon name=\"arrow-forward-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n        </form>\r\n      </ion-grid>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col>\r\n            <h2>Do you want to do the quiostionnaire now?</h2>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-button (click)=\"doQuestionnaire()\">Let's do it</ion-button>\r\n            <ion-button (click)=\"endIntro()\">Later</ion-button>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </ion-slide>\r\n\r\n\r\n  </ion-slides>\r\n</ion-content>";
       /***/
     },
 
@@ -175,7 +175,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "ion-slides {\n  height: 100%;\n}\nion-slides ion-slide {\n  align-items: flex-start;\n}\n.swiper-slide {\n  display: block;\n}\n.swiper-slide h2 {\n  margin-top: 2.8rem;\n}\n.swiper-slide img {\n  max-height: 50%;\n  max-width: 80%;\n  margin: 60px 0 40px;\n  pointer-events: none;\n}\nb {\n  font-weight: 500;\n}\np {\n  padding: 0 40px;\n  font-size: 14px;\n  line-height: 1.5;\n  color: var(--ion-color-step-600, grey);\n}\np b {\n  color: var(--ion-text-color, #000000);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaW50cm8vaW50cm8ucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsWUFBQTtBQUNGO0FBQUU7RUFDRyx1QkFBQTtBQUVMO0FBR0E7RUFDRSxjQUFBO0FBQUY7QUFHQTtFQUNFLGtCQUFBO0FBQUY7QUFHQTtFQUNFLGVBQUE7RUFDQSxjQUFBO0VBQ0EsbUJBQUE7RUFDQSxvQkFBQTtBQUFGO0FBR0E7RUFDRSxnQkFBQTtBQUFGO0FBR0E7RUFDRSxlQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0Esc0NBQUE7QUFBRjtBQUdBO0VBQ0UscUNBQUE7QUFBRiIsImZpbGUiOiJzcmMvYXBwL2ludHJvL2ludHJvLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1zbGlkZXMge1xyXG4gIGhlaWdodDogMTAwJTtcclxuICBpb24tc2xpZGV7XHJcbiAgICAgYWxpZ24taXRlbXM6IGZsZXgtc3RhcnQ7XHJcbiAgfVxyXG59XHJcblxyXG5cclxuLnN3aXBlci1zbGlkZSB7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbn1cclxuXHJcbi5zd2lwZXItc2xpZGUgaDIge1xyXG4gIG1hcmdpbi10b3A6IDIuOHJlbTtcclxufVxyXG5cclxuLnN3aXBlci1zbGlkZSBpbWcge1xyXG4gIG1heC1oZWlnaHQ6IDUwJTtcclxuICBtYXgtd2lkdGg6IDgwJTtcclxuICBtYXJnaW46IDYwcHggMCA0MHB4O1xyXG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG59XHJcblxyXG5iIHtcclxuICBmb250LXdlaWdodDogNTAwO1xyXG59XHJcblxyXG5wIHtcclxuICBwYWRkaW5nOiAwIDQwcHg7XHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG4gIGxpbmUtaGVpZ2h0OiAxLjU7XHJcbiAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1zdGVwLTYwMCwgZ3JleSk7XHJcbn1cclxuXHJcbnAgYiB7XHJcbiAgY29sb3I6IHZhcigtLWlvbi10ZXh0LWNvbG9yLCAjMDAwMDAwKTtcclxufVxyXG4iXX0= */";
+      __webpack_exports__["default"] = "ion-slides {\n  height: 100%;\n}\nion-slides ion-slide {\n  align-items: flex-start;\n}\n.swiper-slide {\n  display: block;\n}\n.swiper-slide h2 {\n  margin-top: 2.8rem;\n}\n.swiper-slide img {\n  max-height: 50%;\n  max-width: 80%;\n  margin: 60px 0 40px;\n  pointer-events: none;\n}\nb {\n  font-weight: 500;\n}\np {\n  padding: 0 40px;\n  font-size: 14px;\n  line-height: 1.5;\n  color: var(--ion-color-step-600, grey);\n}\nspan p {\n  color: var(--ion-text-color, red);\n  font-size: 14px;\n}\np b {\n  color: var(--ion-text-color, #000000);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaW50cm8vaW50cm8ucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsWUFBQTtBQUNGO0FBQUU7RUFDRSx1QkFBQTtBQUVKO0FBRUE7RUFDRSxjQUFBO0FBQ0Y7QUFFQTtFQUNFLGtCQUFBO0FBQ0Y7QUFFQTtFQUNFLGVBQUE7RUFDQSxjQUFBO0VBQ0EsbUJBQUE7RUFDQSxvQkFBQTtBQUNGO0FBRUE7RUFDRSxnQkFBQTtBQUNGO0FBRUE7RUFDRSxlQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0Esc0NBQUE7QUFDRjtBQUVBO0VBQ0UsaUNBQUE7RUFDQSxlQUFBO0FBQ0Y7QUFDQTtFQUNFLHFDQUFBO0FBRUYiLCJmaWxlIjoic3JjL2FwcC9pbnRyby9pbnRyby5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tc2xpZGVzIHtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgaW9uLXNsaWRlIHtcclxuICAgIGFsaWduLWl0ZW1zOiBmbGV4LXN0YXJ0O1xyXG4gIH1cclxufVxyXG5cclxuLnN3aXBlci1zbGlkZSB7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbn1cclxuXHJcbi5zd2lwZXItc2xpZGUgaDIge1xyXG4gIG1hcmdpbi10b3A6IDIuOHJlbTtcclxufVxyXG5cclxuLnN3aXBlci1zbGlkZSBpbWcge1xyXG4gIG1heC1oZWlnaHQ6IDUwJTtcclxuICBtYXgtd2lkdGg6IDgwJTtcclxuICBtYXJnaW46IDYwcHggMCA0MHB4O1xyXG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG59XHJcblxyXG5iIHtcclxuICBmb250LXdlaWdodDogNTAwO1xyXG59XHJcblxyXG5wIHtcclxuICBwYWRkaW5nOiAwIDQwcHg7XHJcbiAgZm9udC1zaXplOiAxNHB4O1xyXG4gIGxpbmUtaGVpZ2h0OiAxLjU7XHJcbiAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1zdGVwLTYwMCwgZ3JleSk7XHJcbn1cclxuXHJcbnNwYW4gcCB7XHJcbiAgY29sb3I6IHZhcigtLWlvbi10ZXh0LWNvbG9yLCByZWQpO1xyXG4gIGZvbnQtc2l6ZTogMTRweDtcclxufVxyXG5wIGIge1xyXG4gIGNvbG9yOiB2YXIoLS1pb24tdGV4dC1jb2xvciwgIzAwMDAwMCk7XHJcbn1cclxuIl19 */";
       /***/
     },
 
@@ -222,35 +222,100 @@
       var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/router */
       "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/forms */
+      "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 
       var IntroPage = /*#__PURE__*/function () {
-        function IntroPage(storage, router) {
+        function IntroPage(storage, router, fbBuilder) {
+          var _this = this;
+
           _classCallCheck(this, IntroPage);
 
           this.storage = storage;
           this.router = router;
+          this.fbBuilder = fbBuilder;
+          this.isSubmitted = false;
           this.user = {
             username: '',
             firstTestScore: 0,
             didTheInitialTest: false,
             everyDayScore: []
           };
+          this.formErrors = {
+            'username': ''
+          };
+          this.validationMessages = {
+            'username': {
+              'required': 'Your name is required.',
+              'minlength': 'Your name must be at least 3 characters long.',
+              'maxlength': 'Your name cannot be more than 10 characters long.',
+              'pattern': 'Contain not allowed characters. '
+            }
+          };
           this.slideOpts = {
             initialSlide: 0,
             speed: 400,
-            allowTouchMove: false
+            allowTouchMove: false,
+            allowSlideNext: false
           };
+          this.usernameForm = this.fbBuilder.group({
+            username: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(3), _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].maxLength(10), _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].pattern('^[a-zA-Z]+$')]]
+          });
+          this.usernameForm.valueChanges.subscribe(function (data) {
+            return _this.onValueChangedData(data);
+          });
         }
 
         _createClass(IntroPage, [{
           key: "ngOnInit",
           value: function ngOnInit() {}
         }, {
+          key: "onValueChangedData",
+          value: function onValueChangedData(data) {
+            if (!this.usernameForm) {
+              return;
+            }
+
+            var form = this.usernameForm;
+
+            for (var field in this.formErrors) {
+              if (this.formErrors.hasOwnProperty(field)) {
+                //clear previous error message
+                this.formErrors[field] = '';
+                var control = form.get(field);
+
+                if (control && control.dirty && !control.valid) {
+                  var messages = this.validationMessages[field];
+
+                  for (var key in control.errors) {
+                    if (control.errors.hasOwnProperty(key)) {
+                      this.formErrors[field] += messages[key] + ' ';
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }, {
           key: "nextSlide",
           value: function nextSlide() {
+            this.slides.lockSwipeToNext(false);
             this.slides.slideNext();
-            this.user.username = this.username;
-            this.storage.set('user', this.user);
+          }
+        }, {
+          key: "onSumbit",
+          value: function onSumbit() {
+            this.isSubmitted = true;
+
+            if (this.usernameForm.valid) {
+              this.user.username = this.usernameForm.value.username;
+              this.storage.set('user', this.user);
+              this.nextSlide();
+            } else console.log('Please provide all the required values!');
           }
         }, {
           key: "endIntro",
@@ -272,6 +337,8 @@
           type: _ionic_storage__WEBPACK_IMPORTED_MODULE_2__["Storage"]
         }, {
           type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+        }, {
+          type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"]
         }];
       };
 

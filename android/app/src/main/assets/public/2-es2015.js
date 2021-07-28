@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-e806d1f6.js */ "./node_modules/@ionic/core/dist/esm/index-e806d1f6.js");
 /* harmony import */ var _ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-9d5c8ee3.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-9d5c8ee3.js");
 /* harmony import */ var _helpers_90f46169_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-90f46169.js */ "./node_modules/@ionic/core/dist/esm/helpers-90f46169.js");
-/* harmony import */ var _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index-1eeeab2e.js */ "./node_modules/@ionic/core/dist/esm/index-1eeeab2e.js");
+/* harmony import */ var _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index-d8cfb4a8.js */ "./node_modules/@ionic/core/dist/esm/index-d8cfb4a8.js");
 /* harmony import */ var _cubic_bezier_eea9a7a9_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cubic-bezier-eea9a7a9.js */ "./node_modules/@ionic/core/dist/esm/cubic-bezier-eea9a7a9.js");
 /* harmony import */ var _theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./theme-ff3fc52f.js */ "./node_modules/@ionic/core/dist/esm/theme-ff3fc52f.js");
 /* harmony import */ var _framework_delegate_4584ab5a_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./framework-delegate-4584ab5a.js */ "./node_modules/@ionic/core/dist/esm/framework-delegate-4584ab5a.js");
@@ -49,7 +49,7 @@ const App = class {
           __webpack_require__.e(/*! import() | status-tap-b46a1b02-js */ "status-tap-b46a1b02-js").then(__webpack_require__.bind(null, /*! ./status-tap-b46a1b02.js */ "./node_modules/@ionic/core/dist/esm/status-tap-b46a1b02.js")).then(module => module.startStatusTap());
         }
         if (_ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('inputShims', needInputShims())) {
-          __webpack_require__.e(/*! import() | input-shims-bc550f99-js */ "input-shims-bc550f99-js").then(__webpack_require__.bind(null, /*! ./input-shims-bc550f99.js */ "./node_modules/@ionic/core/dist/esm/input-shims-bc550f99.js")).then(module => module.startInputShims(_ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["c"]));
+          __webpack_require__.e(/*! import() | input-shims-7a52f98d-js */ "input-shims-7a52f98d-js").then(__webpack_require__.bind(null, /*! ./input-shims-7a52f98d.js */ "./node_modules/@ionic/core/dist/esm/input-shims-7a52f98d.js")).then(module => module.startInputShims(_ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["c"]));
         }
         const hardwareBackButtonModule = await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./hardware-back-button-4a6b37fb.js */ "./node_modules/@ionic/core/dist/esm/hardware-back-button-4a6b37fb.js"));
         if (_ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('hardwareBackButton', isHybrid)) {
@@ -830,7 +830,7 @@ const RouterOutlet = class {
     const { el, mode } = this;
     const animated = this.animated && _ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('animated', true);
     const animationBuilder = this.animation || opts.animationBuilder || _ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('navAnimation');
-    await Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["t"])(Object.assign(Object.assign({ mode,
+    await Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["t"])(Object.assign(Object.assign({ mode,
       animated,
       enteringEl,
       leavingEl, baseEl: el, progressCallback: (opts.progressAnimation

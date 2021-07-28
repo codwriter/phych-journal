@@ -14,10 +14,10 @@
           <ion-label>{{welcomeMessage}} {{user.username}}</ion-label>
         </ion-item>
       </ion-col>
-      <ion-col size="auto" *ngIf="user.firstTestScore">
+      <ion-col (click)="presentAlert()" size="auto" *ngIf="user.firstTestScore">
         <ion-item lines="none">
           <ion-label>Score:</ion-label>
-          <ion-badge (click)="presentAlert()" slot="end">{{user.firstTestScore}}</ion-badge>
+          <ion-badge slot="end">{{user.firstTestScore}}</ion-badge>
         </ion-item>
       </ion-col>
     </ion-row>
@@ -25,10 +25,11 @@
       <ion-col>
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Quote Of the day</ion-card-title>
-            <ion-card-subtitle>{{quotes[1].quoteAuthor}}</ion-card-subtitle>
+            <ion-card-title>Quote of the day</ion-card-title>
+
           </ion-card-header>
           <ion-card-content>{{quotes[1].quoteText}}</ion-card-content>
+            <ion-card-subtitle class="ion-float-right ion-padding-end ion-padding-bottom">{{quotes[1].quoteAuthor}}</ion-card-subtitle>
         </ion-card>
       </ion-col>
     </ion-row>

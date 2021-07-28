@@ -139,6 +139,11 @@
             return addRipple;
           }()
         }, {
+          key: "unbounded",
+          get: function get() {
+            return this.type === 'unbounded';
+          }
+        }, {
           key: "render",
           value: function render() {
             var _class;
@@ -148,11 +153,6 @@
               role: "presentation",
               "class": (_class = {}, _defineProperty(_class, mode, true), _defineProperty(_class, 'unbounded', this.unbounded), _class)
             });
-          }
-        }, {
-          key: "unbounded",
-          get: function get() {
-            return this.type === 'unbounded';
           }
         }, {
           key: "el",

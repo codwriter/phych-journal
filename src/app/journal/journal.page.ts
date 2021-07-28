@@ -1,11 +1,12 @@
-import { Component, ViewChild } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { ModalController, PopoverController } from '@ionic/angular';
 import { JournalEntryPage } from '../journal-entry/journal-entry.page'
 import { UserService } from '../services/user.service';
 import { User } from '../shared/user';
 import { ToastController } from '@ionic/angular';
-import { Chart } from 'chart.js';
 import { Score } from '../shared/score';
+import { PopoverComponent } from './popover/popover.component';
+import { JournalEntryModalComponent } from '../modals/journal-entry-modal/journal-entry-modal.component';
 
 @Component( {
   selector: 'app-journal',
@@ -13,14 +14,15 @@ import { Score } from '../shared/score';
   styleUrls: [ 'journal.page.scss' ]
 } )
 
-export class JournalPage {
+export class JournalPage implements OnInit {
   user: User = { username: "", didTheInitialTest: false, everyDayScore: [], firstTestScore: 0 };
   customPickerOptions: any;
   selectedDate: String;
   score: Score[];
 
   constructor( private modalCtrl: ModalController,
-    private userSrv: UserService, public toastController: ToastController ) {
+    private userSrv: UserService, public toastController: ToastController,
+    private popoverController: PopoverController ) {
     this.userSrv.getUserInfo().then( user => this.user = user );
     this.logDay( 0 );
     this.customPickerOptions = {
@@ -53,8 +55,8 @@ export class JournalPage {
   logDay( number ) {
     switch ( number ) {
       case 0:
-       let date = new Date().toISOString().split( "T" );
-        this.selectedDate = date[0];
+        let date = new Date().toISOString().split( "T" );
+        this.selectedDate = date[ 0 ];
         this.score = this.userSrv.selectedDayLog( this.selectedDate );
         break;
       case 1:
@@ -70,10 +72,12 @@ export class JournalPage {
     this.logDay( 0 );
   }
 
+  ngOnInit() { }
+
   async presentJournalEntryModal() {
     const journalModal = await this.modalCtrl.create( {
       component: JournalEntryPage,
-      cssClass: 'my-custom-modal-css'
+      cssClass: 'my-custom-modal-css',
     } );
     journalModal.present();
     var { data } = await journalModal.onDidDismiss();
@@ -81,16 +85,44 @@ export class JournalPage {
       this.user.everyDayScore.push( data.score );
       this.userSrv.updateUserInfo( this.user );
       this.presentToast( data.score );
+      this.logDay( 0 );
     }
+  }
+
+  async presentJournalStatusModel( score?) {
+    console.log( this.score );
+    const journalStatus = await this.modalCtrl.create( {
+      component: JournalEntryModalComponent,
+      cssClass: 'my-custom-modal-css',
+      componentProps: {
+        'existedScore': score
+      }
+    } );
+    journalStatus.present();
+    if ( this.selectedDate ) {
+      this.logDay( 1 );
+    } else {
+      this.logDay( 0 );
+    }
+    //onsole.log( this.score );
   }
   async presentToast( score ) {
     const toast = await this.toastController.create( {
       header: 'Score',
       message: 'Your score is: ' + score.score,
       position: 'middle',
-      duration: 2000
+      duration: 2500
     } );
     toast.present();
+  }
+
+  async presentPopover( ev: any ) {
+    const popover = await this.popoverController.create( {
+      component: PopoverComponent,
+      event: ev,
+      translucent: true
+    } );
+    await popover.present();
   }
 
   moodSetImg( mood ) {
@@ -114,47 +146,4 @@ export class JournalPage {
         return "assets/emojis/noEmotion.png";
     }
   }
-  /*   //todo: menu to enter date and accordingly view the scores 
-    @ViewChild( 'barChart' ) barChart;
-  
-    bars: any;
-    colorArray: any;
-  
-  
-    ionViewDidEnter() {
-      this.createBarChart();
-    }
-    everydayScores() {
-      var scores=[];
-      for ( let i = 0; i < this.user.everyDayScore.length; i++ ) {
-          scores.push( this.user.everyDayScore[ i ].score );
-          console.log( scores );
-      }
-      return scores;
-    }
-  
-    createBarChart() {
-      this.bars = new Chart( this.barChart.nativeElement, {
-        type: 'bar',
-        data: {
-          labels: [ 'S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8' ],
-          datasets: [ {
-            label: 'Viewers in millions',
-            data:  this.everydayScores() ,
-            backgroundColor: 'rgb(38, 194, 129)', // array should have same number of elements as number of dataset
-            borderColor: 'rgb(38, 194, 129)',// array should have same number of elements as number of dataset
-            borderWidth: 1
-          } ]
-        },
-        options: {
-          scales: {
-            yAxes: [ {
-              ticks: {
-                beginAtZero: true
-              }
-            } ]
-          }
-        }
-      } );
-    } */
 }

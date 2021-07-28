@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-e806d1f6.js */ "./node_modules/@ionic/core/dist/esm/index-e806d1f6.js");
 /* harmony import */ var _ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-9d5c8ee3.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-9d5c8ee3.js");
 /* harmony import */ var _helpers_90f46169_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-90f46169.js */ "./node_modules/@ionic/core/dist/esm/helpers-90f46169.js");
-/* harmony import */ var _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index-1eeeab2e.js */ "./node_modules/@ionic/core/dist/esm/index-1eeeab2e.js");
+/* harmony import */ var _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index-d8cfb4a8.js */ "./node_modules/@ionic/core/dist/esm/index-d8cfb4a8.js");
 /* harmony import */ var _cubic_bezier_eea9a7a9_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cubic-bezier-eea9a7a9.js */ "./node_modules/@ionic/core/dist/esm/cubic-bezier-eea9a7a9.js");
 /* harmony import */ var _framework_delegate_4584ab5a_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./framework-delegate-4584ab5a.js */ "./node_modules/@ionic/core/dist/esm/framework-delegate-4584ab5a.js");
 
@@ -164,7 +164,7 @@ const Nav = class {
   }
   disconnectedCallback() {
     for (const view of this.views) {
-      Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["l"])(view.element, _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["d"]);
+      Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["l"])(view.element, _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["d"]);
       view._destroy();
     }
     if (this.gesture) {
@@ -705,9 +705,9 @@ const Nav = class {
     // let's make sure, callbacks are zoned
     if (destroyQueue && destroyQueue.length > 0) {
       for (const view of destroyQueue) {
-        Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["l"])(view.element, _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["b"]);
-        Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["l"])(view.element, _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["c"]);
-        Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["l"])(view.element, _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["d"]);
+        Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["l"])(view.element, _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["b"]);
+        Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["l"])(view.element, _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["c"]);
+        Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["l"])(view.element, _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["d"]);
       }
       // once all lifecycle events has been delivered, we can safely detroy the views
       for (const view of destroyQueue) {
@@ -727,7 +727,7 @@ const Nav = class {
     const leavingEl = leavingView && leavingView.element;
     const animationOpts = Object.assign({ mode, showGoBack: this.canGoBackSync(enteringView), baseEl: this.el, animationBuilder: this.animation || opts.animationBuilder || _ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('navAnimation'), progressCallback, animated: this.animated && _ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('animated', true), enteringEl,
       leavingEl }, opts);
-    const { hasCompleted } = await Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["t"])(animationOpts);
+    const { hasCompleted } = await Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["t"])(animationOpts);
     return this.transitionFinish(hasCompleted, enteringView, leavingView, opts);
   }
   transitionFinish(hasCompleted, enteringView, leavingView, opts) {
@@ -801,13 +801,13 @@ const Nav = class {
         if (i > activeViewIndex) {
           // this view comes after the active view
           // let's unload it
-          Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["l"])(element, _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["d"]);
+          Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["l"])(element, _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["d"]);
           this.destroyView(view);
         }
         else if (i < activeViewIndex) {
           // this view comes before the active view
           // and it is not a portal then ensure it is hidden
-          Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["s"])(element, true);
+          Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["s"])(element, true);
         }
       }
     }

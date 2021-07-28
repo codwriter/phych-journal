@@ -58,9 +58,9 @@
       /* harmony import */
 
 
-      var _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ./index-1eeeab2e.js */
-      "./node_modules/@ionic/core/dist/esm/index-1eeeab2e.js");
+      var _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ./index-d8cfb4a8.js */
+      "./node_modules/@ionic/core/dist/esm/index-d8cfb4a8.js");
       /* harmony import */
 
 
@@ -540,7 +540,7 @@
                     case 8:
                       this.usersElement = _context.sent;
                       _context.next = 11;
-                      return Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_4__["e"])(this.usersElement);
+                      return Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_4__["e"])(this.usersElement);
 
                     case 11:
                       Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__["c"])(function () {

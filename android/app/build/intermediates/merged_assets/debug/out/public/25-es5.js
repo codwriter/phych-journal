@@ -392,6 +392,34 @@
             this.updateValue();
           }
         }, {
+          key: "valA",
+          get: function get() {
+            return ratioToValue(this.ratioA, this.min, this.max, this.step);
+          }
+        }, {
+          key: "valB",
+          get: function get() {
+            return ratioToValue(this.ratioB, this.min, this.max, this.step);
+          }
+        }, {
+          key: "ratioLower",
+          get: function get() {
+            if (this.dualKnobs) {
+              return Math.min(this.ratioA, this.ratioB);
+            }
+
+            return 0;
+          }
+        }, {
+          key: "ratioUpper",
+          get: function get() {
+            if (this.dualKnobs) {
+              return Math.max(this.ratioA, this.ratioB);
+            }
+
+            return this.ratioA;
+          }
+        }, {
           key: "updateRatio",
           value: function updateRatio() {
             var value = this.getValue();
@@ -526,34 +554,6 @@
             })), Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", {
               name: "end"
             }));
-          }
-        }, {
-          key: "valA",
-          get: function get() {
-            return ratioToValue(this.ratioA, this.min, this.max, this.step);
-          }
-        }, {
-          key: "valB",
-          get: function get() {
-            return ratioToValue(this.ratioB, this.min, this.max, this.step);
-          }
-        }, {
-          key: "ratioLower",
-          get: function get() {
-            if (this.dualKnobs) {
-              return Math.min(this.ratioA, this.ratioB);
-            }
-
-            return 0;
-          }
-        }, {
-          key: "ratioUpper",
-          get: function get() {
-            if (this.dualKnobs) {
-              return Math.max(this.ratioA, this.ratioB);
-            }
-
-            return this.ratioA;
           }
         }, {
           key: "el",

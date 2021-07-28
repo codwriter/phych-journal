@@ -94,9 +94,9 @@
       /* harmony import */
 
 
-      var _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ./index-1eeeab2e.js */
-      "./node_modules/@ionic/core/dist/esm/index-1eeeab2e.js");
+      var _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./index-d8cfb4a8.js */
+      "./node_modules/@ionic/core/dist/esm/index-d8cfb4a8.js");
       /* harmony import */
 
 
@@ -159,10 +159,10 @@
 
                         if (_ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('inputShims', needInputShims())) {
                           __webpack_require__.e(
-                          /*! import() | input-shims-bc550f99-js */
-                          "input-shims-bc550f99-js").then(__webpack_require__.bind(null,
-                          /*! ./input-shims-bc550f99.js */
-                          "./node_modules/@ionic/core/dist/esm/input-shims-bc550f99.js")).then(function (module) {
+                          /*! import() | input-shims-7a52f98d-js */
+                          "input-shims-7a52f98d-js").then(__webpack_require__.bind(null,
+                          /*! ./input-shims-7a52f98d.js */
+                          "./node_modules/@ionic/core/dist/esm/input-shims-7a52f98d.js")).then(function (module) {
                             return module.startInputShims(_ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["c"]);
                           });
                         }
@@ -1524,7 +1524,7 @@
                       animated = this.animated && _ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('animated', true);
                       animationBuilder = this.animation || opts.animationBuilder || _ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('navAnimation');
                       _context12.next = 9;
-                      return Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["t"])(Object.assign(Object.assign({
+                      return Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["t"])(Object.assign(Object.assign({
                         mode: mode,
                         animated: animated,
                         enteringEl: enteringEl,

@@ -62,9 +62,9 @@
       /* harmony import */
 
 
-      var _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ./index-1eeeab2e.js */
-      "./node_modules/@ionic/core/dist/esm/index-1eeeab2e.js");
+      var _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./index-d8cfb4a8.js */
+      "./node_modules/@ionic/core/dist/esm/index-d8cfb4a8.js");
       /* harmony import */
 
 
@@ -325,7 +325,7 @@
             try {
               for (_iterator.s(); !(_step = _iterator.n()).done;) {
                 var view = _step.value;
-                Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["l"])(view.element, _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["d"]);
+                Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["l"])(view.element, _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["d"]);
 
                 view._destroy();
               }
@@ -1185,9 +1185,9 @@
               try {
                 for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
                   var _view2 = _step4.value;
-                  Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["l"])(_view2.element, _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["b"]);
-                  Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["l"])(_view2.element, _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["c"]);
-                  Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["l"])(_view2.element, _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["d"]);
+                  Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["l"])(_view2.element, _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["b"]);
+                  Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["l"])(_view2.element, _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["c"]);
+                  Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["l"])(_view2.element, _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["d"]);
                 } // once all lifecycle events has been delivered, we can safely detroy the views
 
               } catch (err) {
@@ -1243,7 +1243,7 @@
                         leavingEl: leavingEl
                       }, opts);
                       _context7.next = 8;
-                      return Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["t"])(animationOpts);
+                      return Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["t"])(animationOpts);
 
                     case 8:
                       _yield$Object = _context7.sent;
@@ -1354,12 +1354,12 @@
                 if (i > activeViewIndex) {
                   // this view comes after the active view
                   // let's unload it
-                  Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["l"])(element, _index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["d"]);
+                  Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["l"])(element, _index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["d"]);
                   this.destroyView(view);
                 } else if (i < activeViewIndex) {
                   // this view comes before the active view
                   // and it is not a portal then ensure it is hidden
-                  Object(_index_1eeeab2e_js__WEBPACK_IMPORTED_MODULE_3__["s"])(element, true);
+                  Object(_index_d8cfb4a8_js__WEBPACK_IMPORTED_MODULE_3__["s"])(element, true);
                 }
               }
             }

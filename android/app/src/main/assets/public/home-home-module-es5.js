@@ -22,7 +22,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar>\n    <ion-title class=\"ion-text-center\">\n      Home\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content  class=\"ion-padding\">\n  <ion-grid>\n    <ion-row *ngIf=\"user.username\">\n      <ion-col>\n        <ion-label>\n          {{welcomeMessage}} {{user.username}}</ion-label>\n      </ion-col>\n      <ion-col *ngIf=\"user.firstTestScore\">\n        <ion-item>\n        <ion-label>Score</ion-label>\n        <ion-badge slot=\"end\">{{user.firstTestScore}}</ion-badge>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-card>\n          <ion-card-header>\n            <ion-card-title>Quote Of the day</ion-card-title>\n            <ion-card-subtitle>{{quotes[1].quoteAuthor}}</ion-card-subtitle>\n          </ion-card-header>\n          <ion-card-content>{{quotes[1].quoteText}}</ion-card-content>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-button expand=\"block\" (click)=\"questionnaire()\">Lets do the questionnaire</ion-button>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n</ion-content>";
+      __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title class=\"ion-text-center\">\r\n      Home\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"ion-padding\">\r\n  <ion-grid>\r\n    <ion-row>\r\n      <ion-col *ngIf=\"user.username\">\r\n        <ion-item lines=\"none\">\r\n          <ion-label>{{welcomeMessage}} {{user.username}}</ion-label>\r\n        </ion-item>\r\n      </ion-col>\r\n      <ion-col (click)=\"presentAlert()\" size=\"auto\" *ngIf=\"user.firstTestScore\">\r\n        <ion-item lines=\"none\">\r\n          <ion-label>Score:</ion-label>\r\n          <ion-badge slot=\"end\">{{user.firstTestScore}}</ion-badge>\r\n        </ion-item>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-card>\r\n          <ion-card-header>\r\n            <ion-card-title>Quote of the day</ion-card-title>\r\n\r\n          </ion-card-header>\r\n          <ion-card-content>{{quotes[1].quoteText}}</ion-card-content>\r\n            <ion-card-subtitle class=\"ion-float-right ion-padding-end ion-padding-bottom\">{{quotes[1].quoteAuthor}}</ion-card-subtitle>\r\n        </ion-card>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col *ngIf=\"!user.firstTestScore\">\r\n        <ion-button expand=\"block\" (click)=\"questionnaire()\">Lets do the questionnaire</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n\r\n  </ion-grid>\r\n</ion-content>";
       /***/
     },
 
@@ -207,57 +207,67 @@
       /* harmony import */
 
 
-      var _ionic_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @ionic/storage */
-      "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
-      /* harmony import */
-
-
-      var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/router */
       "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
       /* harmony import */
 
 
-      var _shared_quotes_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _shared_quotes_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ../shared/quotes.json */
       "./src/app/shared/quotes.json");
 
-      var _shared_quotes_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(
+      var _shared_quotes_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(
       /*! ../shared/quotes.json */
       "./src/app/shared/quotes.json", 1);
+      /* harmony import */
+
+
+      var _services_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../services/user.service */
+      "./src/app/services/user.service.ts");
+      /* harmony import */
+
+
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @ionic/angular */
+      "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
 
       var HomePage = /*#__PURE__*/function () {
-        function HomePage(storage, router) {
-          var _this = this;
-
+        function HomePage(router, userSrvc, alertController) {
           _classCallCheck(this, HomePage);
 
-          this.storage = storage;
           this.router = router;
-          this.quotes = _shared_quotes_json__WEBPACK_IMPORTED_MODULE_4__;
+          this.userSrvc = userSrvc;
+          this.alertController = alertController;
+          this.quotes = _shared_quotes_json__WEBPACK_IMPORTED_MODULE_3__;
           this.user = {
-            username: "",
+            username: '',
             didTheInitialTest: false,
             everyDayScore: [],
             firstTestScore: 0
           };
-          this.storage.get('user').then(function (user) {
-            if (user) {
-              _this.user = user;
-            }
-          });
         }
 
         _createClass(HomePage, [{
           key: "ngOnInit",
           value: function ngOnInit() {
+            var _this = this;
+
             this.welcomeMessage = this.welcomeText();
+            this.userSrvc.getUserInfo().then(function (user) {
+              return _this.user = user;
+            });
+            this.shuffleArray(_shared_quotes_json__WEBPACK_IMPORTED_MODULE_3__);
           }
         }, {
           key: "ionViewWillEnter",
           value: function ionViewWillEnter() {
-            this.shuffleArray(_shared_quotes_json__WEBPACK_IMPORTED_MODULE_4__);
+            var _this2 = this;
+
+            this.userSrvc.getUserInfo().then(function (user) {
+              return _this2.user = user;
+            });
           }
         }, {
           key: "shuffleArray",
@@ -275,12 +285,54 @@
             this.router.navigateByUrl('questionnaire');
           }
         }, {
+          key: "presentAlert",
+          value: function presentAlert() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+              var _this3 = this;
+
+              var alert;
+              return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                  switch (_context.prev = _context.next) {
+                    case 0:
+                      _context.next = 2;
+                      return this.alertController.create({
+                        cssClass: 'my-custom-class',
+                        header: 'Result:',
+                        message: 'You score suggests that you are.......\n Do you want to do the questionaire again?',
+                        buttons: [{
+                          text: 'Cancel',
+                          role: 'cancel',
+                          cssClass: 'secondary',
+                          handler: function handler() {}
+                        }, {
+                          text: 'Okay',
+                          handler: function handler() {
+                            _this3.questionnaire();
+                          }
+                        }]
+                      });
+
+                    case 2:
+                      alert = _context.sent;
+                      _context.next = 5;
+                      return alert.present();
+
+                    case 5:
+                    case "end":
+                      return _context.stop();
+                  }
+                }
+              }, _callee, this);
+            }));
+          }
+        }, {
           key: "welcomeText",
           value: function welcomeText() {
             var myDate = new Date();
             var hrs = myDate.getHours();
             var greet;
-            if (hrs < 12) return greet = "Good Morning";else if (hrs >= 12 && hrs <= 17) return greet = 'Good Afternoon';else if (hrs >= 17 && hrs <= 24) return greet = 'Good Evening';
+            if (hrs < 12) return greet = "Good morning,";else if (hrs >= 12 && hrs <= 17) return greet = 'Good afternoon,';else if (hrs >= 17 && hrs <= 24) return greet = 'Good evening,';
           }
         }]);
 
@@ -289,9 +341,11 @@
 
       HomePage.ctorParameters = function () {
         return [{
-          type: _ionic_storage__WEBPACK_IMPORTED_MODULE_2__["Storage"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
         }, {
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+          type: _services_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"]
         }];
       };
 

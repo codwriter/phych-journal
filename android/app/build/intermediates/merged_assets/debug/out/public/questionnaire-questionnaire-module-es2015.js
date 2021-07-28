@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons>\r\n      <ion-button (click)=\"exitQuestionnaire()\">\r\n        <ion-icon name=\"arrow-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content fullscreen class=\"ion-padding\">\r\n  <ion-slides [options]=\"slideOpts\" #slides scrollbar=\"true\">\r\n    <ion-slide *ngFor=\"let question of questions.questions; let i = index;\">\r\n      <ion-list lines=\"none\">\r\n        <form [formGroup]=\"assesmentForm\" (ngSubmit)=\"onSubmit()\">\r\n          <ion-grid>\r\n            <ion-row>\r\n              <ion-col class=\"ion-align-self-center\">\r\n                <h3>Question {{i+1}} of {{questions.questions.length}}</h3>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col class=\"ion-align-self-center\">\r\n                <h3>{{question.questionText}}</h3>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col class=\"ion-align-self-center\">\r\n                <ion-label>How frequent is happening from 0 to 5?</ion-label>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col class=\"ion-align-self-center\">\r\n                <ion-radio-group lines=\"none\" formControlName=\"frequency_answer\">\r\n                  <ion-row>\r\n                    <ion-col class=\"ion-align-self-center\">\r\n                      <ion-range min=\"0\" max=\"5\" snaps=\"true\" value=\"0\" pin=\"true\" ticks=\"true\"\r\n                        formControlName=\"frequency_answer\">\r\n                        <ion-label slot=\"start\">0</ion-label>\r\n                        <ion-label slot=\"end\">5</ion-label>\r\n                      </ion-range>\r\n                    </ion-col>\r\n                  </ion-row>\r\n                </ion-radio-group>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row class=\"ion-padding\">\r\n              <ion-col class=\"ion-align-self-center\">\r\n                <ion-label>How intence did you feel it from 0 to 5?</ion-label>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col class=\"ion-align-self-center\">\r\n                <ion-range min=\"0\" max=\"5\" snaps=\"true\" pin=\"true\" ticks=\"true\" value=\"0\"\r\n                  formControlName=\"intencity_answer\">\r\n                  <ion-label slot=\"start\">0</ion-label>\r\n                  <ion-label slot=\"end\">5</ion-label>\r\n                </ion-range>\r\n              </ion-col>\r\n            </ion-row>\r\n\r\n            <ion-button class=\"ion-align-self-center\" shape=\"round\" type=\"submit\">\r\n              <ion-icon name=\"arrow-forward-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ion-grid>\r\n        </form>\r\n      </ion-list>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-label>Your Result is: {{result}}</ion-label>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col class=\"ion-align-self-center\">\r\n            <ion-button shape=\"round\" (click)=\"finish()\">\r\n              <ion-icon name=\"checkmark-done-outline\"></ion-icon>\r\n            </ion-button>\r\n            <ion-button shape=\"round\" (click)=\"restart()\">\r\n              <ion-icon name=\"refresh-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </ion-slide>\r\n  </ion-slides>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content fullscreen class=\"ion-padding\">\r\n  <ion-slides [options]=\"slideOpts\" #slides scrollbar=\"true\">\r\n    <ion-slide *ngFor=\"let question of questions.questions; let i = index;\">\r\n      <ion-list lines=\"none\">\r\n        <form [formGroup]=\"assesmentForm\" (ngSubmit)=\"onSubmit()\">\r\n          <ion-grid>\r\n            <ion-row>\r\n              <ion-col class=\"ion-align-self-center\">\r\n                <h3>Question {{i+1}} of {{questions.questions.length}}</h3>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col class=\"ion-align-self-center\">\r\n                <h3>{{question.questionText}}</h3>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col class=\"ion-align-self-center\">\r\n                <ion-label>How frequent is happening from 0 to 5?</ion-label>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col class=\"ion-align-self-center\">\r\n                <ion-radio-group lines=\"none\" formControlName=\"frequency_answer\">\r\n                  <ion-row>\r\n                    <ion-col class=\"ion-align-self-center\">\r\n                      <ion-range min=\"0\" max=\"5\" snaps=\"true\" value=\"0\" pin=\"true\" ticks=\"true\"\r\n                        formControlName=\"frequency_answer\">\r\n                        <ion-label slot=\"start\">0</ion-label>\r\n                        <ion-label slot=\"end\">5</ion-label>\r\n                      </ion-range>\r\n                    </ion-col>\r\n                  </ion-row>\r\n                </ion-radio-group>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row class=\"ion-padding\">\r\n              <ion-col class=\"ion-align-self-center\">\r\n                <ion-label>How intence did you feel it from 0 to 5?</ion-label>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col class=\"ion-align-self-center\">\r\n                <ion-range min=\"0\" max=\"5\" snaps=\"true\" pin=\"true\" ticks=\"true\" value=\"0\"\r\n                  formControlName=\"intencity_answer\">\r\n                  <ion-label slot=\"start\">0</ion-label>\r\n                  <ion-label slot=\"end\">5</ion-label>\r\n                </ion-range>\r\n              </ion-col>\r\n            </ion-row>\r\n\r\n            <ion-button class=\"ion-align-self-center\" shape=\"round\" type=\"submit\">\r\n              <ion-icon name=\"arrow-forward-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ion-grid>\r\n        </form>\r\n      </ion-list>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-label>Your Result is: {{result}}</ion-label>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col class=\"ion-align-self-center\">\r\n            <ion-button shape=\"round\" (click)=\"finish()\">\r\n              <ion-icon name=\"checkmark-done-outline\"></ion-icon>\r\n            </ion-button>\r\n            <ion-button shape=\"round\" (click)=\"restart()\">\r\n              <ion-icon name=\"refresh-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </ion-slide>\r\n  </ion-slides>\r\n</ion-content>");
 
 /***/ }),
 
@@ -123,6 +123,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 /* harmony import */ var _shared_questions_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/questions.json */ "./src/app/shared/questions.json");
 var _shared_questions_json__WEBPACK_IMPORTED_MODULE_5___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../shared/questions.json */ "./src/app/shared/questions.json", 1);
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/user.service */ "./src/app/services/user.service.ts");
+
 
 
 
@@ -130,11 +132,11 @@ var _shared_questions_json__WEBPACK_IMPORTED_MODULE_5___namespace = /*#__PURE__*
 
 
 let QuestionnairePage = class QuestionnairePage {
-    constructor(storage, router, formBuilder) {
+    constructor(storage, usrSrv, router, formBuilder) {
         this.storage = storage;
+        this.usrSrv = usrSrv;
         this.router = router;
         this.formBuilder = formBuilder;
-        this.user = { username: '', firstTestScore: 0, didTheInitialTest: false, everyDayScore: [] };
         this.questions = _shared_questions_json__WEBPACK_IMPORTED_MODULE_5__;
         this.frequency_answer = 0;
         this.intencity_answer = 0;
@@ -148,6 +150,7 @@ let QuestionnairePage = class QuestionnairePage {
             frequency_answer: [0, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
             intencity_answer: [0, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]
         });
+        this.usrSrv.getUserInfo().then(user => this.user = user);
     }
     ngOnInit() {
     }
@@ -168,14 +171,8 @@ let QuestionnairePage = class QuestionnairePage {
         this.result = 0;
         this.slides.slideTo(0);
     }
-    exitQuestionnaire() {
-        this.result = 0;
-        this.slides.slideTo(0);
-        this.router.navigateByUrl('tabs/home');
-    }
     finish() {
         this.user.firstTestScore = this.result;
-        this.user.username = this.username;
         if (this.result) {
             this.user.didTheInitialTest = true;
         }
@@ -185,6 +182,7 @@ let QuestionnairePage = class QuestionnairePage {
 };
 QuestionnairePage.ctorParameters = () => [
     { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_2__["Storage"] },
+    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] }
 ];
@@ -210,7 +208,7 @@ QuestionnairePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 /*! exports provided: questions, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"questions\":[{\"id\":0,\"questionText\":\"Feeling mechanical and 'robotic' when moving?\"},{\"id\":1,\"questionText\":\"Seeing oneself outside, as if looking in a mirror?\"},{\"id\":2,\"questionText\":\"Unable to feel property things touched with hands?\"},{\"id\":3,\"questionText\":\"Urge to touch oneself to be reassured of body existence?\"},{\"id\":4,\"questionText\":\"Feeling of being outside the body?\"},{\"id\":5,\"questionText\":\"Body feels as if it didn't belong to self?\"},{\"id\":6,\"questionText\":\"Feeling of being a detached observer of oneself?\"},{\"id\":7,\"questionText\":\"Own voice sounds remote  and unreal?\"},{\"id\":8,\"questionText\":\"Body feels very light, as if it were floating on air?\"},{\"id\":9,\"questionText\":\"Smell of things no longer gives feeling of pleasure or dislike?\"},{\"id\":10,\"questionText\":\"Unable to feel hunger or thirst?\"},{\"id\":11,\"questionText\":\"Flavor of meals no longer gives feeling of pleasure or distaste?\"},{\"id\":12,\"questionText\":\"No emotions felt when weeping or laughing\"},{\"id\":13,\"questionText\":\"Unable to feel affection towards family and friends?\"},{\"id\":14,\"questionText\":\"Feeling of not having any thoughts at all?\"},{\"id\":15,\"questionText\":\"Personal memories feel as if one had not been involved in them?\"},{\"id\":16,\"questionText\":\"Recently done things feel as if they had taken place long time ago?\"},{\"id\":17,\"questionText\":\"Objects look smaller or further away?\"},{\"id\":18,\"questionText\":\"Unable to picture things in mind?\"},{\"id\":19,\"questionText\":\"When in a new situation, feeling as if it happened before?\"},{\"id\":20,\"questionText\":\"Feeling unreal or cut-off from the world\"},{\"id\":21,\"questionText\":\"Surroundings feel detached or unreal?\"},{\"id\":22,\"questionText\":\"Favourite activities no longer enjoyable?\"},{\"id\":23,\"questionText\":\"Things look flat, as if looking at a picture?\"}]}");
+module.exports = JSON.parse("{\"questions\":[{\"id\":0,\"questionText\":\"Feeling mechanical and 'robotic' when moving?\"},{\"id\":1,\"questionText\":\"Seeing oneself outside, as if looking in a mirror?\"},{\"id\":2,\"questionText\":\"Unable to feel properly things touched with hands?\"},{\"id\":3,\"questionText\":\"Urge to touch oneself to be reassured of body existence?\"},{\"id\":4,\"questionText\":\"Feeling of being outside the body?\"},{\"id\":5,\"questionText\":\"Body feels as if it didn't belong to self?\"},{\"id\":6,\"questionText\":\"Feeling of being a detached observer of oneself?\"},{\"id\":7,\"questionText\":\"Own voice sounds remote  and unreal?\"},{\"id\":8,\"questionText\":\"Body feels very light, as if it were floating on air?\"},{\"id\":9,\"questionText\":\"Smell of things no longer gives feeling of pleasure or dislike?\"},{\"id\":10,\"questionText\":\"Unable to feel hunger or thirst?\"},{\"id\":11,\"questionText\":\"Flavor of meals no longer gives feeling of pleasure or distaste?\"},{\"id\":12,\"questionText\":\"No emotions felt when weeping or laughing\"},{\"id\":13,\"questionText\":\"Unable to feel affection towards family and friends?\"},{\"id\":14,\"questionText\":\"Feeling of not having any thoughts at all?\"},{\"id\":15,\"questionText\":\"Personal memories feel as if one had not been involved in them?\"},{\"id\":16,\"questionText\":\"Recently done things feel as if they had taken place long time ago?\"},{\"id\":17,\"questionText\":\"Objects look smaller or further away?\"},{\"id\":18,\"questionText\":\"Unable to picture things in mind?\"},{\"id\":19,\"questionText\":\"When in a new situation, feeling as if it happened before?\"},{\"id\":20,\"questionText\":\"Feeling unreal or cut-off from the world\"},{\"id\":21,\"questionText\":\"Surroundings feel detached or unreal?\"},{\"id\":22,\"questionText\":\"Favourite activities no longer enjoyable?\"},{\"id\":23,\"questionText\":\"Things look flat, as if looking at a picture?\"}]}");
 
 /***/ })
 

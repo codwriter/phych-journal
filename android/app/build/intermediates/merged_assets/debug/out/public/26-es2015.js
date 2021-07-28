@@ -161,8 +161,8 @@ const shouldUseNativeRefresher = async (referenceEl, mode) => {
     return Promise.resolve(false);
   }
   await refresherContent.componentOnReady();
-  const pullingSpinner = refresherContent.querySelector('.refresher-pulling ion-spinner');
-  const refreshingSpinner = refresherContent.querySelector('.refresher-refreshing ion-spinner');
+  const pullingSpinner = referenceEl.querySelector('ion-refresher-content .refresher-pulling ion-spinner');
+  const refreshingSpinner = referenceEl.querySelector('ion-refresher-content .refresher-refreshing ion-spinner');
   return (pullingSpinner !== null &&
     refreshingSpinner !== null &&
     ((mode === 'ios' && Object(_ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_1__["i"])('mobile') && referenceEl.style.webkitOverflowScrolling !== undefined) ||
